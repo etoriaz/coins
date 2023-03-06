@@ -1,0 +1,2 @@
+class MessagesVotesController < ApplicationController
+end
