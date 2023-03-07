@@ -2,7 +2,7 @@ class PortfoliosController < ApplicationController
   def index
     # return all portfolios for the current user
     @user = current_user
-    @user_portfolios = Portfolio.all
+    @user_portfolios = current_user.portfolio
   end
 
   def show
@@ -13,7 +13,7 @@ class PortfoliosController < ApplicationController
     if @portfolio.save
       redirect_to portfolios_path
     else
-      render :new, status: :unprocessable_entity
+      render :show, status: :unprocessable_entity
     end
   end
 
@@ -21,7 +21,7 @@ class PortfoliosController < ApplicationController
     if @portfolio.update(params_portfolio)
       redirect to porfolio_path(@porfolio)
     else
-      render :new, status: :unprocessable_entity
+      render :show, status: :unprocessable_entity
     end
   end
 
