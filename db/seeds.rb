@@ -311,14 +311,32 @@ address32 = Address.create(
 )
 
 address33 = Address.create(
-  portfolio: portfolio12,
+  portfolio: portfolio11,
   public_key: "bc1qjhx47nwpcqxlyml9236uns4znt5c9420zkf4l5zyr0xj5wn9wytsp992mf",
   blockchain: "bitcoin"
 )
 
 address34 = Address.create(
-  portfolio: portfolio13,
+  portfolio: portfolio12,
   public_key: "3B1VRHq5M8xo6zfqFyR6a5XDB2HdXGe7cs",
+  blockchain: "bitcoin"
+)
+
+address35 = Address.create(
+  portfolio: portfolio12,
+  public_key: "bc1qqupcg7gp0cajmge3nd0a3wvc02mwzh772nurtv",
+  blockchain: "bitcoin"
+)
+
+address36 = Address.create(
+  portfolio: portfolio13,
+  public_key: "36mDcBoZWJNpWKR3WK9pNs3c3gf7vaw7NF",
+  blockchain: "bitcoin"
+)
+
+address37 = Address.create(
+  portfolio: portfolio13,
+  public_key: "bc1qpdtjc33n70us9ps64tmqsqjgun9u95au0q0pfz",
   blockchain: "bitcoin"
 )
 
