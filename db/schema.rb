@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_06_153535) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_104631) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -72,8 +72,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_153535) do
     t.integer "amount"
     t.string "signature"
     t.date "date_sent"
+    t.bigint "sender_id", null: false
+    t.bigint "receiver_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["receiver_id"], name: "index_transactions_on_receiver_id"
+    t.index ["sender_id"], name: "index_transactions_on_sender_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -84,6 +88,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_153535) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "usurname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -97,4 +102,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_153535) do
   add_foreign_key "portfolios", "users"
   add_foreign_key "portfollio_addresses", "addresses"
   add_foreign_key "portfollio_addresses", "portfolios"
+  add_foreign_key "transactions", "addresses", column: "receiver_id"
+  add_foreign_key "transactions", "addresses", column: "sender_id"
 end
