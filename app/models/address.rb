@@ -1,4 +1,4 @@
 class Address < ApplicationRecord
-  validate :public_key, presence: true
-  validate :blockchain, presence: true
+  validates :public_key, presence: true
+  validates :blockchain, presence: true
 end
