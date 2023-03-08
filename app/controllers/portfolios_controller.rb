@@ -2,11 +2,10 @@ class PortfoliosController < ApplicationController
   def index
     # return all portfolios for the current user
     @user = current_user
-    @user_portfolios = current_user.portfolio
+    @user_portfolios = current_user.portfolios
   end
 
-  def show
-  end
+  def show; end
 
   def create
     @portfolio = Portfolio.new(params_portfolio)
