@@ -1,0 +1,28 @@
+.container-team {
+  display: flex;
+  width: 283px;
+  height: 161px;
+  background-color: #E6E6E6;
+  border-radius: 20px;
+  box-shadow : 5px 5px 0.5em 0.5em white;
+}
+
+.status-grey {
+  color: gray;
+}
+
+.img-team {
+  width: 149px;
+  height: 100%;
+  padding-right: 10px;
+  object-fit: cover;
+}
+
+.team-left {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+h3 {
+  font-size: 18px;
+}

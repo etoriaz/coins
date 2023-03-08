@@ -1,0 +1,31 @@
+.container-transaction {
+  background-color: #0E0000;
+  border-radius: 20px;
+  box-shadow : 5px 5px 0.5em 0.5em gray;
+  width: 652px;
+  height: 99px;
+  padding: 10px;
+  padding-bottom: 5px;
+}
+
+.top-transaction {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-transaction {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btc-yellow {
+  color: #f1b648;
+}
+
+.loading {
+  color: #e28432;
+}
+
+.strong-white {
+  color: white;
+}
