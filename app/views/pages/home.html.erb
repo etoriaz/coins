@@ -9,7 +9,65 @@
       <%= image_tag('cryptocurrency.jpg', class:"img-banner", size: '50')%>
     </div>
   </div>
+</div>
 
-  <div> 
+<div class="d-flex banner-add" style="background-color: rgb(21 21 21)">
+  <div>
+        <%= image_tag('virtualcard.png', class:"imgform", size: '50')%>
   </div>
+  <div>
+    <h1 class="title">ADD YOUR CRYPTO !</h1>
+      <%# <%= simple_form_for @horse, url: owner_horses_path do |f| %>
+    <%# <div class="container mt-4"> %>
+      <%# <div class="row"> %>
+        <%# <div class="col-4"> %>
+          <%# <%= f.input :name, label:"Nom", placeholder:"Hugo"  %>
+        <%# </div> %>
+        <%# <div class="col-2"> %>
+          <%# <%= f.input :age, label:"Age", placeholder:"11"  %>
+        <%# </div> %>
+        <%# <div class="col-6"> %>
+          <%# <%= f.input :photo, as: :file %>
+        <%# </div> %>
+      <%# </div> %>
+  </div>
+</div>
+
+<div class=" team" style="background-color: rgb(21 21 21)">
+  <h1 class="title-card format-title-team">THE TEAM</h1>
+    <div class="display-card">
+      <div class="container-team">
+        <div class="team-left">
+          <h3 class="forma-card-team"><strong>LAFARGUE</strong></h3>
+          <h3 class="sub-title-team"><strong>Thibault</strong></h3>
+          <p class="status-grey">Lead Dev</p>
+        </div>
+        <%= image_tag("thibault.png", class: "img-team")%>
+      </div>
+      <div class="container-team">
+        <div class="team-left">
+          <h3 class="forma-card-team"><strong>BOISTAULT</strong></h3>
+          <h3 class="sub-title-team"><strong>Enzo</strong></h3>
+          <p class="status-grey">UI / UX Dev</p>
+        </div>
+        <%= image_tag("enzo.png", class: "img-team")%>
+      </div>
+      <div class="container-team">
+        <div class="team-left">
+          <h3 class="forma-card-team"><strong>RAIMBAULT</strong></h3>
+          <h3 class="sub-title-team"><strong>FX</strong></h3>
+          <p class="status-grey">UI / UX Dev</p>
+        </div>
+        <%= image_tag("fx.png", class: "img-team")%>
+      </div>
+      <div class="container-team">
+        <div class="team-left">
+          <h3 class="forma-card-team"><strong>ETORIAZ</strong></h3>
+          <h3 class="sub-title-team"><strong>Irvin</strong></h3>
+          <p class="status-grey">Back Dev</p>
+        </div>
+        <%= image_tag("irving.png", class: "img-team")%>
+      </div>
+    </div>
+
 </div>
