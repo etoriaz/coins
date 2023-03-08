@@ -47,7 +47,7 @@ user5 = User.create(
 
 puts "Ok pour les users"
 
-###PORTFOLOIOS###
+### PORTFOLOIOS ###
 
 portfolio1 = Portfolio.create(
   user: user1,
@@ -116,7 +116,7 @@ portfolio13 = Portfolio.create(
 
 puts "Ok pour les portfolios"
 
-###AddressES###
+### AddressES ###
 
 address1 = Address.create(
   portfolio: portfolio1,
