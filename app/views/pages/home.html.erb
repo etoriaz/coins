@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: url(<%= image_path('background-color.jpg') %>);">
+  <div class="d-flex banner-display">
+    <div class="container">
+      <h1 class="first-title">YOUR CRYPTO AT A GLANCE WITH COINS</h1>
+      <h4 class="sub-title">Generate your free dashboard in 5 minutes using the form!</h4>
+      <a class="btn-home-white start-btn font-btn" href="#">Start</a>
+    </div>
+    <div class="container img-align">
+      <%= image_tag('cryptocurrency.jpg', class:"img-banner", size: '50')%>
+    </div>
+  </div>
+
+  <div> 
+  </div>
+</div>
