@@ -1,0 +1,22 @@
+.container-portfolio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2D2D2D;
+  border-radius: 20px;
+  box-shadow : 5px 5px 0.5em 0.5em gray;
+  width: 685px;
+  height: 59px;
+  padding: 10px;
+}
+
+.img-portfolio {
+  width: 40px;
+  height: 40px;
+}
+
+.text-white {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 0;
+}
