@@ -4,14 +4,11 @@ import "./controllers"
 import "bootstrap"
 import { bitcoinPrice, ethereumPrice, solanaPrice } from "./api/price"
 import { transactionsForBitcoinAddress } from "./api/transactions"
+import { getHistoryForAddress } from "./api/history"
 
-const getDateDaysAgo = (days) => {
-  let date = new Date
-  date.setDate(date.getDate() - days)
-  return date
-}
-
-bitcoinPrice("12h", getDateDaysAgo(90).getTime(), Date.now())
-  .then((data) => { window.btcPrice = data })
-transactionsForBitcoinAddress("3Dh8ZebbTSNboNwdwvPA6NjUdfsamPJGXo")
-  .then((data) => { window.transactions = data })
+// bitcoinPrice("12h", getDateDaysAgo(90).getTime(), Date.now())
+//   .then((data) => { window.btcPrice = data })
+// transactionsForBitcoinAddress("3Dh8ZebbTSNboNwdwvPA6NjUdfsamPJGXo", 90)
+//   .then((data) => { console.log(data) })
+getHistoryForAddress("3Dh8ZebbTSNboNwdwvPA6NjUdfsamPJGXo", 90, "12h")
+  .then((data) => { window.history = data })
