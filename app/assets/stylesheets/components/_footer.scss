@@ -1,0 +1,22 @@
+.footer {
+  background: rgb(21, 21, 21);
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  position:absolute;
+  bottom:0;
+  width:100%;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
