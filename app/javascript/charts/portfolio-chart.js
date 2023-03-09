@@ -47,9 +47,10 @@ const chartCreate = () => {
     },
     plugins: [plugin],
     options: {
+      aspectRatio: 4,
       plugins: {
         customCanvasBackgroundColor: {
-          color: 'black',
+          color: '#151515',
         }
       },
         legend: {
