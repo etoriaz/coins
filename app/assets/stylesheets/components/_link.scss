@@ -1,0 +1,10 @@
+.link-white {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "InternalRainbows";
+
+  &:hover {
+    color: $coins-dark-purple;
+  }
+}
