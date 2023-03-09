@@ -1,10 +1,29 @@
+.team {
+  padding-top: 20px;
+  padding-bottom: 50px;
+  padding-left: 60px;
+  padding-right: 60px;
+  height: 100%;
+}
+
+.format-title-team {
+  padding-left: 6%;
+  padding-bottom: 20px;
+}
+
+.display-card {
+  display: flex;
+  justify-content: space-between;
+}
+
 .container-team {
   display: flex;
   width: 283px;
   height: 161px;
   background-color: #E6E6E6;
   border-radius: 20px;
-  box-shadow : 5px 5px 0.5em 0.5em white;
+  box-shadow: 1px 1px 7px 1px white;
+  position: relative;
 }
 
 .status-grey {
@@ -12,6 +31,9 @@
 }
 
 .img-team {
+  position: absolute;
+  bottom: 0px; right: 0px;
+
   width: 149px;
   height: 100%;
   padding-right: 10px;
@@ -19,10 +41,10 @@
 }
 
 .team-left {
-  padding-top: 10px;
-  padding-left: 10px;
+  padding-top: 15px;
+  padding-left: 15px;
 }
 
-h3 {
-  font-size: 18px;
+.forma-card-team {
+  margin-bottom: -3px;
 }

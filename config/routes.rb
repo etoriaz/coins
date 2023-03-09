@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :portfolios, only: %i[index show create update]
 
   get "/addresses/:public_key", to: "addresses#show"
+  resources :transactions, only: :show
+  resources :addresses, only: %i[show create]
 end
