@@ -1,14 +1,16 @@
-const chartCreate = () => {
-  Chart.Tooltip.positioners.fixed = function(items) {
-    const chart = this.chart;
-    return {
-      x: chart.chartArea.left + (chart.chartArea.right - chart.chartArea.left) / 2,
-      y: 100,
-      xAlign: "center"
-    }
-  }
+import Chart from 'chart.js/auto'
+import 'chartjs-adapter-luxon'
 
+const chartCreate = (timestamps, values) => {
 
+  // Chart.Tooltip.positioners.fixed = function(items) {
+  //   const chart = this.chart;
+  //   return {
+  //     x: chart.chartArea.left + (chart.chartArea.right - chart.chartArea.left) / 2,
+  //     y: 100,
+  //     xAlign: "center"
+  //   }
+  // }
   Chart.defaults.font.family = "Arial";
 
   const plugin = {
@@ -28,12 +30,12 @@ const chartCreate = () => {
     backgroundColor: "#F9BEB3",
     type: 'line',
     data: {
-      labels: ['Jan 2022', 'Feb 2022', 'Mar 2022', 'Apr 2022', 'May 2022', 'Jun 2022', 'Jul 2022', 'Aug 2022', 'Sept 2022', 'Oct 2022', 'Nov 2022', 'Dec 2022'],
+      labels: timestamps,
       datasets: [{
         tension: 0.4,
         pointHoverRadius: 10,
         label: 'Portfolio Value',
-        data: [10000, 9000, 12000, 7500, 13000, 14000, 17000, 11000, 20000, 22000, 25000, 17000],
+        data: values,
         backgroundColor: 'rgba(255, 255, 255, 0.8)',
         borderColor: 'rgba(255, 153, 0, 1)',
         borderWidth: 2,
@@ -51,15 +53,16 @@ const chartCreate = () => {
       plugins: {
         customCanvasBackgroundColor: {
           color: '#151515',
-        }
-      },
+        },
         legend: {
           display: false,
         },
-
+        tooltip: {
+          xAlign: 'center'
+        }
+      },
       scales: {
         y: {
-          beginAtZero: true,
           scaleLabel: {
             display: false,
             labelString: 'Portfolio Value'
@@ -75,18 +78,21 @@ const chartCreate = () => {
         }
         },
         x: {
+          type: "time",
+          time: {
+            unit: "month"
+          },
           scaleLabel: {
             display: true,
             labelString: 'Month'
           },
           ticks: {
             callback: function(value, index){
-              console.log(this.getLabelForValue())
-                if (this.getLabelForValue(index) == 0 || index === value.length - 1) {
-                  return this.getLabelForValue(value)
-                } else {
-                  return ''
-                }
+              if (index === 0 || index === timestamps.length - 1) {
+                return this.getLabelForValue(value);
+              } else {
+                return '';
+              }
             },
             font: {
               size: 12,
@@ -96,6 +102,20 @@ const chartCreate = () => {
             display: false,
         },
         }
+      },
+      elements: {
+        point: {
+          radius: 0
+        }
+      },
+      interaction: {
+        mode: 'nearest',
+        axis: 'x',
+        intersect: false
+      },
+      hover: {
+        intersect: false,
+        pointRadius: 10
       }
     }
   })
