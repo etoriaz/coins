@@ -64,9 +64,7 @@ const chartCreate = () => {
             labelString: 'Portfolio Value'
           },
           ticks: {
-            callback: function(value, index){
-              console.log(this.getLabelForValue())
-            },
+            display: false,
             font: {
               size: 24
             }
@@ -83,10 +81,10 @@ const chartCreate = () => {
           ticks: {
             callback: function(value, index){
               console.log(this.getLabelForValue())
-                if (this.getLabelForValue(index) == 'Today' || 'Jan 2022') {
+                if (this.getLabelForValue(index) == 0 || index === value.length - 1) {
                   return this.getLabelForValue(value)
                 } else {
-                  return
+                  return ''
                 }
             },
             font: {
