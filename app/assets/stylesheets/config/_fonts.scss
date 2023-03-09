@@ -5,12 +5,68 @@
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
 
-// To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+@font-face {
+  font-family: InternalRainbows;
+  src: url('InternalRainbows.otf');
+}
+
+.font-rainbows {
+  font-family: "InternalRainbows";
+}
+
+h1 {
+ font-size: 40px;
+ color: white;
+ margin-top: 10px;
+ margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 40px;
+  color: white;
+}
+
+.title-card {
+  font-size: 36px;
+  color: white;
+}
+
+.sub-title {
+  font-size: 16px;
+  color: white;
+}
+
+.sub-title-team {
+  font-size: 16px;
+  color: black;
+}
+
+.first-title {
+  font-size: 60px;
+  color: white;
+}
+
+.title {
+  font-size: 40px;
+  color: rgb(199, 74, 227);
+}
+
+.font-btn {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+.exemple {
+  font-size: 12px;
+  color: white;
+}
+
+.adresse {
+  font-size: 12px;
+  color: white;
+}
