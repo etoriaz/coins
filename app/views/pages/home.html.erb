@@ -23,16 +23,16 @@
       <div class="container mt-4">
         <div class="row">
 
-          <div class="col-6">
+          <div>
             <%= f.input :public_key, label:"Public Key", placeholder:"Enter your public key" %>
           </div>
 
-          <div class="col-6">
+          <div>
             <%= f.input :blockchain, label:"Blockchain", placeholder:"Enter the blockchain name" %>
           </div>
-
+          <div class="col-12 d-flex justify-content-end">
           <%= f.submit "Go !", class: "violet-btn" %>
-
+          </div>
         </div>
         <% end %>
       </div>
