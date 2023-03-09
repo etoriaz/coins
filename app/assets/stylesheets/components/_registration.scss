@@ -1,0 +1,47 @@
+.display-registration {
+  background-size: cover;
+  background-position: center;
+}
+
+.d-flexx {
+  display: flex;
+  justify-content: space-between;
+}
+
+.signintitle {
+  font-size: 40px;
+  color: rgb(199, 74, 227);
+  text-align: center;
+}
+
+.registration-btn {
+  color: white;
+  border-radius: 12px;
+  width: 100px;
+  margin-top: 15px;
+  background-color: rgb(199, 74, 227);
+}
+
+.form-v {
+  width: 100%;
+  height: 74px;
+}
+
+.form-vide2 {
+  width: 50%;
+}
+.registration-form {
+  background-color: rgb(21, 21, 21);
+  width: 50%;
+  padding: 9%;
+  height: 660px;
+}
+
+.registration-img {
+  width: 50%;
+  padding: 5% 9%;
+}
+.registration-imgform {
+  height: 500px;
+  width: 450px;
+}
