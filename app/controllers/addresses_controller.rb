@@ -1,4 +1,8 @@
 class AddressesController < ApplicationController
+  def show
+    @address = Address.find_by(public_key: params[:public_key])
+  end
+
   def create
     @address = Address.new(address_params)
     if @address.save
