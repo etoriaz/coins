@@ -11,11 +11,4 @@ import { getHistoryForAddress } from "./api/history"
 //   .then((data) => { window.btcPrice = data })
 // transactionsForBitcoinAddress("3Dh8ZebbTSNboNwdwvPA6NjUdfsamPJGXo", 90)
 //   .then((data) => { console.log(data) })
-<<<<<<< HEAD
-// getHistoryForAddress("3Dh8ZebbTSNboNwdwvPA6NjUdfsamPJGXo", 90, "12h")
-//   .then((data) => { window.addressHistory = data })
-// chartCreate()
-=======
-getHistoryForAddress("3Dh8ZebbTSNboNwdwvPA6NjUdfsamPJGXo", 90, "12h")
-  .then((data) => { window.addressHistory = data })
->>>>>>> 4304ac31301b3d0525e2773268a222e35c2fef09
+

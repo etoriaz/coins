@@ -4,10 +4,9 @@ class PagesController < ApplicationController
   def home
   end
 
-<<<<<<< HEAD
   def chart
-=======
+  end
+
   def component
->>>>>>> 4304ac31301b3d0525e2773268a222e35c2fef09
   end
 end

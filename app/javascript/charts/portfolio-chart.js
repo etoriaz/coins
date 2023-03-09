@@ -81,6 +81,13 @@ const chartCreate = () => {
             labelString: 'Month'
           },
           ticks: {
+            callback: function(value, index){
+              console.log(this.getLabelForValue())
+              if (this.getLabelForValue(index) == 'Today' || 'Jan 2022') {
+                return this.getLabelForValue(value)
+
+              }
+            },
             font: {
               size: 12,
             }
