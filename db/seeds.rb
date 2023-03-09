@@ -47,11 +47,7 @@ user5 = User.create(
 
 puts "Ok pour les users"
 
-<<<<<<< HEAD
-###PORTFOLOIOS###
-=======
 ### PORTFOLOIOS ###
->>>>>>> 4304ac31301b3d0525e2773268a222e35c2fef09
 
 portfolio1 = Portfolio.create(
   user: user1,
@@ -120,11 +116,7 @@ portfolio13 = Portfolio.create(
 
 puts "Ok pour les portfolios"
 
-<<<<<<< HEAD
-###AddressES###
-=======
 ### AddressES ###
->>>>>>> 4304ac31301b3d0525e2773268a222e35c2fef09
 
 address1 = Address.create(
   portfolio: portfolio1,
