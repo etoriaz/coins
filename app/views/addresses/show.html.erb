@@ -11,7 +11,7 @@
             <div class="text-success"><i class="fa-solid fa-triangle"></i> 5.24%</div>
           </div>
         </div>
-        <div class="address mt-4"><%= params[:public_key] %></div>
+        <div class="address text-break mt-4"><%= params[:public_key] %></div>
         <div class="separate"></div>
         <div class="transactions">
           <div class="d-flex justify-content-around align-items-center">
@@ -52,7 +52,7 @@
         <i class="fa-solid fa-arrow-left p-1"></i>WALLETS
       </a>
     </div>
-    <%# <div data-controller="transactions" data-transactions-address-value="<%= params[:public_key] %><%#">
-    </div> %>
+    <div data-controller="transactions" data-transactions-address-value="<%= params[:public_key] %>">
+    </div>
   </div>
 </div>
