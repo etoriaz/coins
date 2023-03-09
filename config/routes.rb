@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   end
 
   resources :transactions, only: :show
-  resources :addresses, only: :show
+  resources :addresses, only: %i[show create]
 end
