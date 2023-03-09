@@ -83,10 +83,11 @@ const chartCreate = () => {
           ticks: {
             callback: function(value, index){
               console.log(this.getLabelForValue())
-              if (this.getLabelForValue(index) == 'Today' || 'Jan 2022') {
-                return this.getLabelForValue(value)
-
-              }
+                if (this.getLabelForValue(index) == 'Today' || 'Jan 2022') {
+                  return this.getLabelForValue(value)
+                } else {
+                  return
+                }
             },
             font: {
               size: 12,
@@ -98,7 +99,7 @@ const chartCreate = () => {
         }
       }
     }
-  });
+  })
 }
 
 export { chartCreate }
