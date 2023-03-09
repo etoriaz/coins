@@ -1,9 +1,9 @@
 const getPriceData = async (symbol, interval, start_time, end_time) => {
   const res = await fetch(`https://data.binance.com/api/v3/klines?` +
-  `symbol=${symbol}&` +
-  `interval=${interval}&` +
-  `startTime=${start_time}&` +
-  `endTime=${end_time}`)
+    `symbol=${symbol}&` +
+    `interval=${interval}&` +
+    `startTime=${start_time}&` +
+    `endTime=${end_time}`)
   return await res.json()
 }
 
