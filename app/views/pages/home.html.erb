@@ -15,21 +15,27 @@
   <div>
         <%= image_tag('virtualcard.png', class:"imgform", size: '50')%>
   </div>
+
   <div>
-    <h1 class="title">ADD YOUR CRYPTO !</h1>
-      <%# <%= simple_form_for @horse, url: owner_horses_path do |f| %>
-    <%# <div class="container mt-4"> %>
-      <%# <div class="row"> %>
-        <%# <div class="col-4"> %>
-          <%# <%= f.input :name, label:"Nom", placeholder:"Hugo"  %>
-        <%# </div> %>
-        <%# <div class="col-2"> %>
-          <%# <%= f.input :age, label:"Age", placeholder:"11"  %>
-        <%# </div> %>
-        <%# <div class="col-6"> %>
-          <%# <%= f.input :photo, as: :file %>
-        <%# </div> %>
-      <%# </div> %>
+  <h1 class="title">ADD YOUR CRYPTO !</h1>
+
+      <%= simple_form_for @address do |f| %>
+      <div class="container mt-4">
+        <div class="row">
+
+          <div class="col-6">
+            <%= f.input :public_key, label:"Public Key", placeholder:"Enter your public key" %>
+          </div>
+
+          <div class="col-6">
+            <%= f.input :blockchain, label:"Blockchain", placeholder:"Enter the blockchain name" %>
+          </div>
+
+          <%= f.submit "Go !", class: "violet-btn" %>
+
+        </div>
+        <% end %>
+      </div>
   </div>
 </div>
 
@@ -62,7 +68,7 @@
       </div>
       <div class="container-team">
         <div class="team-left">
-          <h3 class="forma-card-team"><strong>ETORIAZ</strong></h3>
+          <h3 class="forma-card-team"><strong>ETORI</strong></h3>
           <h3 class="sub-title-team"><strong>Irvin</strong></h3>
           <p class="status-grey">Back Dev</p>
         </div>
