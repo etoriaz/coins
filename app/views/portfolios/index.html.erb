@@ -1,1 +1,36 @@
-<%= @user_portfolios %>
+<div class="profile-container mt-5 pt-3">
+  <div class='wrapper-banner'>
+    <div class="row d-flex justify-content-center container-banner">
+      <div class="card-profile-banner p-3 py-4">
+        <div class="text-center">
+          <%= image_tag("homme-photo.png", size: '80x80', class: 'profile-image')%>
+        </div>
+        <div class="text-center mt-3">
+          <h2 class="mt-2 mb-0 profile-name"> <%= current_user.username.capitalize %></h5>
+          <p class='profession-title'>Crypto enthusiast #HODL</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="profile-content bg-dark-grey">
+    <div class="wallets">
+        <h1 class='font-rainbows'> Wallets</h1>
+        <% @user_portfolios.each do |portfolio| %>
+          <div class="container-portfolio-profile mt-3">
+            <%= image_tag("btc2.png", class: "img-portfolio")%>
+            <h4 class="text-card-wallet"> <%= portfolio.name.upcase %></h4>
+            <h4 class="text-card-wallet"> : </h4>
+            <h4 class="text-card-wallet">86</h4>
+            <h4 class="text-card-wallet">addresses</h4>
+            <i class="fas fa-trash m-3"></i>
+          </div>
+        <% end %>
+    </div>
+    <%# <div class="chart-view">
+      <h1 class='font-rainbows'>View</h1>
+      <canvas id="viewCanvas" aria-label="chart" role="img">
+        <h1> TOTAL BITCOIN</h1>
+      </canvas>
+    </div> %>
+  </div>
+</div>
