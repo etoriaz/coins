@@ -6,28 +6,25 @@ export default class extends Controller {
   static values = { address: String }
 
   connect() {
-    console.log("hii")
-    console.log(this.addressValue)
     transactionsForBitcoinAddress(this.addressValue, 60)
       .then((transactions) => {
         transactions.forEach((transaction) => {
-          console.log(transaction)
           this.element.insertAdjacentHTML("beforeend",
             `<div class="card-transaction-large my-4">` +
               `<div>` +
-                `<strong>FROM:</strong> <span>1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</span>` +
+            `<strong>FROM:</strong> ${transaction.inputs[0].prev_out.addr}` +
               `</div>` +
               `<div>` +
-                `<strong>TO:</strong> 1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2` +
+            `<strong>TO:</strong> ${transaction.out[0].addr}` +
               `</div>` +
-              `<div class="text-warning">` +
-                `${transaction.balance / 100_000_000} BTC` +
+              `<div class="${transaction.result > 0 ? "text-success" : "text-danger"}">` +
+                `${transaction.result / 100_000_000} BTC` +
               `</div>` +
               `<div>` +
-                `8h02 - 01/03/2023` +
+                `${new Date(transaction.time).toISOString()}` +
               `</div>` +
-              `<div class="text-warning">` +
-                `PENDING` +
+              `<div>` +
+                `<a href="https://www.blockchain.com/explorer/transactions/btc/${transaction.hash}" target="_blank" class="link-white"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>` +
               `</div>` +
             `</div>`
           )

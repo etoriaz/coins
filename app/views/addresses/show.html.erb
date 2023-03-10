@@ -11,7 +11,7 @@
             <div class="text-success"><i class="fa-solid fa-triangle"></i> 5.24%</div>
           </div>
         </div>
-        <div class="address mt-4"><%= params[:public_key] %></div>
+        <div class="address text-break mt-4"><%= params[:public_key] %></div>
         <div class="separate"></div>
         <div class="transactions">
           <div class="d-flex justify-content-around align-items-center">
@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <div class="bg-dark-grey d-flex align-items-center" style="height: 45vh; width: 75vw; border-radius: 20px;">
+    <div class="bg-dark-grey d-flex align-items-center" style="height: 45vh; width: 75vw; border-radius: 20px;" data-controller="charts">
       <canvas id="portfolioCanvas" aria-label="chart" role="img" class="my-auto">
         <h1> TOTAL BITCOIN</h1>
       </canvas>
@@ -48,11 +48,11 @@
   <div class="container p-5">
     <div class="d-flex align-items-center justify-content-between mb-4">
       <h2>RECENT TRANSACTIONS</h2>
-      <a href="#" class="d-flex link-white">
-        <i class="fa-solid fa-arrow-left p-1"></i>WALLETS
+      <a href="<%= portfolio_path(@address.portfolio) %>" class="d-flex link-white">
+        <i class="fa-solid fa-arrow-left p-1"></i>PORTFOLIO
       </a>
     </div>
-    <%# <div data-controller="transactions" data-transactions-address-value="<%= params[:public_key] %><%#">
-    </div> %>
+    <div data-controller="transactions" data-transactions-address-value="<%= params[:public_key] %>">
+    </div>
   </div>
 </div>

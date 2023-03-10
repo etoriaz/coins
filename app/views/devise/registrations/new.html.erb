@@ -1,25 +1,47 @@
-<h2>Sign up</h2>
+<div class="display-registration">
+  <video autoplay loop muted plays-inline class="back-video">
+    <source src="backcolor.mp4" type="video/mp4">
+  </video>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-  <%= f.error_notification %>
+    <div class="form-v"></div>
+    <div class="d-flexx">
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-  </div>
+      <div class="registration-form">
+          <h2 class="signintitle font-rainbows">SIGN IN</h2>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+          <%= f.error_notification %>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+          <div class="form-vide">
+          </div>
 
-<%= render "devise/shared/links" %>
+          <div class="form-inputs">
+          <%= f.input :username,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "username" }, placeholder: 'Hugo', label: 'Username', label_html: { style: "color: white;" } %>
+            <%= f.input :email,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" }, placeholder: 'user@domain.com', label: 'Email', label_html: { style: "color: white;" } %>
+            <%= f.input :password,
+                        required: true,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password" }, placeholder: 'your password', label: 'Your Password', label_html: { style: "color: white;" }  %>
+            <%= f.input :password_confirmation,
+                        required: true,
+                        input_html: { autocomplete: "new-password" }, placeholder: 'your password', label: 'Confirmed Your Password', label_html: { style: "color: white;" }   %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "GO", class:"registration-btn violet-btn" %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="registration-img">
+        <%= image_tag('safety.png', class:"registration-imgform")%>
+      </div>
+    </div>
+</div>
+
+

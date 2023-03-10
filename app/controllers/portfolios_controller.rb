@@ -5,7 +5,9 @@ class PortfoliosController < ApplicationController
     @user_portfolios = current_user.portfolios
   end
 
-  def show; end
+  def show
+    @portfolio = Portfolio.find(params[:id])
+  end
 
   def create
     @portfolio = Portfolio.new(params_portfolio)

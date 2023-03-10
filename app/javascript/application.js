@@ -16,3 +16,4 @@ import { getHistoryForAddress } from "./api/history"
 //   .then((data) => { window.addressHistory = data })
 chartCreate()
 viewChartCreate()
+

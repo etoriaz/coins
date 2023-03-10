@@ -1,4 +1,8 @@
-<div class="banner" style="background-image: url(<%= image_path('background-color.jpg') %>);">
+<div class="banner">
+  <video autoplay loop muted plays-inline class="back-video">
+    <source src="backcolor.mp4" type="video/mp4">
+  </video>
+
   <div class="d-flex banner-display">
     <div class="container">
       <h1 class="first-title">YOUR CRYPTO AT A GLANCE WITH COINS</h1>
@@ -12,26 +16,24 @@
 </div>
 
 <div class="d-flex banner-add" style="background-color: rgb(21 21 21)">
-  <div>
-        <%= image_tag('virtualcard.png', class:"imgform", size: '50')%>
+  <div class="position-cache">
+        <div class="cache-logo"></div>
+        <iframe src='https://my.spline.design/untitled-f53ed9f96027b1afe0a1657257688a16/' frameborder='0' width='100%' height='100%' class="imgform spline-watermark"></iframe>
   </div>
-
   <div>
-  <h1 class="title">ADD YOUR CRYPTO !</h1>
-
+  <h1 class="title title-search font-rainbows">ADD YOUR CRYPTO !</h1>
       <%= simple_form_for @address do |f| %>
       <div class="container mt-4">
         <div class="row">
 
-          <div class="col-6">
-            <%= f.input :public_key, label:"Public Key", placeholder:"Enter your public key" %>
+          <div>
+            <%= f.input :public_key, :as => :text, placeholder: 'bc1q5crsrfueudwyfekp...', label:"Public Key", label_html: { style: "color: white;" } %>
           </div>
 
-          <div class="col-6">
-            <%= f.input :blockchain, label:"Blockchain", placeholder:"Enter the blockchain name" %>
+          <div class="col-12 d-flex justify-content-end search-go">
+            <%# <%= f.submit "Go !", class: "violet-btn" %>
+            <a><%= link_to "Go !", portfolios_path, class:"violet-btn-home"%></a>
           </div>
-
-          <%= f.submit "Go !", class: "violet-btn" %>
 
         </div>
         <% end %>
@@ -39,8 +41,8 @@
   </div>
 </div>
 
-<div class=" team" style="background-color: rgb(21 21 21)">
-  <h1 class="title-card format-title-team">THE TEAM</h1>
+<div class="team" style="background-color: rgb(21 21 21)">
+  <h1 class="title-card font-rainbows format-title-team">THE TEAM</h1>
     <div class="display-card">
       <div class="container-team">
         <div class="team-left">
