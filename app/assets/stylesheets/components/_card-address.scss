@@ -1,21 +1,33 @@
 .container-address {
-  background-color: #0E0000;
+  background-color: $coins-grey;
   border-radius: 20px;
-  box-shadow : 5px 5px 0.5em 0.5em gray;
+  box-shadow: black 0px 20px 30px -10px;
   width: 286px;
   height: 89px;
-  padding: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $coins-pink;
+  }
 
   h2 {
     padding-left: 5px;
+    font-family: "Nunito" !important;
+    font-size: 18px !important;
   }
 }
 
 .icone-title {
   display:flex;
+  align-items: center;
+
+  h2 {
+    margin-bottom: 0;
+  }
 }
 
 .key-balance {
@@ -45,4 +57,10 @@ p {
 .img-bitcoin {
   width: 27px;
   height: 27px;
+}
+
+.addresses-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
