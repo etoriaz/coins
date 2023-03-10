@@ -29,49 +29,69 @@
   align-items: center;
   background-color: #2D2D2D;
   border-radius: 20px;
-  box-shadow : inset 0 0 15px rgba(0, 0, 0, 1);
+  box-shadow: black 0px 20px 30px -10px;;
   width: 100%;
   height: 59px;
   padding: 10px;
 }
+
+.container-banner {
+  background-image: url('banner-crypto2.png');
+  margin: 30px 50px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+.profile-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding-bottom: 30px;
+  background: black;
+}
+
 
 .text-card-wallet {
   color: white;
   font-size: 12px;
   margin-bottom: 0;
 }
-.profile-name {
-  color: white;
-  font-size: 16px;
-  margin-bottom: 0;
-}
-
 .profession-title {
-  color: #A1A1A1;
-  font-size: 10px;
+  color: #ffffff;
+  font-size: 15px;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: lighter;
 }
+.profile-name {
+  color: white;
+  font-size: 25px;
+  margin-bottom: 0;
+}
+
+.profile-image {
+  border-radius: 50px;
+  border: 1px solid #FFFF;
+  object-fit: cover;
+}
+
+
 
 .profile-container {
-  background-color: black;
+  background-color: #d63384;
+  background-image: url('background-color.jpg');
 }
-
-.container-banner {
-  background-color: #C74AE3;
-}
-
 
 .wallets {
   width: 100%;
+  margin-left: 15px;
+  margin-right: 10px
 }
 
-.card-banner-profile{
-  border:none;
-  position:relative;
-  overflow:hidden;
-  border-radius:8px;
-  cursor:pointer;
+.chart-view {
+  padding: 0 10px;
 }
 
 .profile-banner {
