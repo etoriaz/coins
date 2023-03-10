@@ -1,5 +1,6 @@
-import Chart from 'chart.js/auto'
+import {Chart, Tooltip } from 'chart.js/auto'
 import 'chartjs-adapter-luxon'
+
 
 const chartCreate = (timestamps, values) => {
 
