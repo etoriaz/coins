@@ -34,7 +34,14 @@
   background-color: rgb(21, 21, 21);
   width: 50%;
   height: 100%;
-  padding: 9%;
+  padding: 10% 9% 10.6% 9%;
+}
+
+.registration-form-session {
+  background-color: rgb(21, 21, 21);
+  width: 50%;
+  height: 100%;
+  padding: 10% 10% 24.3% 10%;
 }
 
 .registration-img {
@@ -45,4 +52,15 @@
 .registration-imgform {
   height: 478px;
   width: 460px;
+}
+
+
+.registration-img-session {
+  width: 50%;
+  height: 100%;
+  padding: 4%;
+}
+.registration-imgform-session {
+  height: 593px;
+  width: 560px;
 }

@@ -1,19 +1,17 @@
-<div class="navbar navbar-expand-sm navbar-lewagon">
-  <div class="container-fluid">
+<div class="navbar navbar-expand-sm navbar-lewagon display-nav">
 
-    <a class="navbar-brand" href="#">
-      <h1 class="font-rainbows logo">COINS</h1>
-    </a>
+    <div><h1><%= link_to "COINS", root_path, class:"font-rainbows logo"%></h1>
+    </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="navbar-items">
-            <a class="btn-home-white font-btn" href="#">Sign In</a>
+            <a><%= link_to "Sign In", new_user_registration_path, class:"btn-home-white font-btn"%></a>
           </li>
           <li class="navbar-items">
-            <a class="btn-home-white font-btn" href="#">Connexion</a>
+            <a><%= link_to "Log In", user_session_path, class:"btn-home-white font-btn"%></a>
           </li>
       </ul>
     </div>
-  </div>
+
 </div>
