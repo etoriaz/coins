@@ -1,11 +1,11 @@
 .container-transaction {
-  background-color: #0E0000;
+  background-color: #202020;
   border-radius: 20px;
   box-shadow : 5px 5px 0.5em 0.5em gray;
   width: 652px;
   height: 99px;
-  padding: 10px;
-  padding-bottom: 5px;
+  padding: 20px;
+  line-height: 10px;
 }
 
 .top-transaction {
@@ -20,10 +20,13 @@
 
 .btc-yellow {
   color: #f1b648;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 .loading {
   color: #e28432;
+  font-weight: 400;
 }
 
 .strong-white {
