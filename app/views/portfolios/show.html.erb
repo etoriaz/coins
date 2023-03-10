@@ -22,7 +22,6 @@
       <div class="addresses-grid">
         <% @portfolio.addresses.each do |address| %>
           <a class="container-address" href="<%= address_path(address.public_key) %>">
-          <div class="container-address">
             <div class="icone-title">
               <%= image_tag("btc.png", class: "img-bitcoin") %>
               <h2><strong>BITCOIN</strong></h2>
