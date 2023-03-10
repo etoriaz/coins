@@ -1,35 +1,35 @@
-<div class="container-session">
-  <div class="row">
-    <div class="form-signin col-6">
+<div class="display-registration" style="background-image: url(<%= image_path('background-color.jpg') %>);">
+    <div class="form-v"></div>
+    <div class="d-flexx">
 
+      <div class="registration-img-session">
+        <%= image_tag('calendar.png', class:"registration-imgform-session")%>
+      </div>
 
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
+      <div class="registration-form-session">
+          <h2 class="signintitle font-rainbows">LOG IN</h2>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+          <%= f.error_notification %>
 
-          <div class="form-inputs col-8">
-            <h1 class="title-center"><strong>LOG IN</strong></h1>
-            <%= f.input :email,
-                        required: false,
-                        autofocus: true,
-                        input_html: { autocomplete: "email" } %>
-            <%= f.input :password,
-                        required: false,
-                        input_html: { autocomplete: "current-password" } %>
-            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-
-
-
-            <%= f.button :submit, "Log in", class: "violet-btn" %>
+          <div class="form-vide">
           </div>
-      <% end %>
 
-      <%# <%= render "devise/shared/links" %>
+          <div class="form-inputs">
+          <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }, placeholder: 'exemple@gmail.com', label: 'Email', label_html: { style: "color: white;" } %>
+          <%= f.input :password,
+                      required: false,
+                      input_html: { autocomplete: "current-password" }, placeholder: '******', label: 'Your Password', label_html: { style: "color: white;" } %>
+        </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "GO", class:"registration-btn violet-btn" %>
+          </div>
+        <% end %>
+      </div>
     </div>
-
-    <div class="right-signin col-6">
-
-    </div>
-
-  </div>
 </div>
 
 

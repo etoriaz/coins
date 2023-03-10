@@ -1,6 +1,7 @@
 <div class="display-registration" style="background-image: url(<%= image_path('background-color.jpg') %>);">
     <div class="form-v"></div>
     <div class="d-flexx">
+
       <div class="registration-form">
           <h2 class="signintitle font-rainbows">SIGN IN</h2>
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
@@ -8,6 +9,7 @@
 
           <div class="form-vide">
           </div>
+
           <div class="form-inputs">
           <%= f.input :username,
                         required: true,
@@ -27,7 +29,7 @@
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "GO", class:"registration-btn" %>
+            <%= f.button :submit, "GO", class:"registration-btn violet-btn" %>
           </div>
         <% end %>
       </div>
