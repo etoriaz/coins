@@ -13,5 +13,9 @@ application.register("charts", ChartsController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import MessageController from "./message_controller"
+application.register("message", MessageController)
+
 import TransactionsController from "./transactions_controller"
 application.register("transactions", TransactionsController)
+
