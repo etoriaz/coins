@@ -15,29 +15,39 @@
   <div class="col-12 col-lg-6">
     <div class="d-flex justify-content-between align-items-center">
       <h3 class="text-pink my-4">ADDRESSES</h3>
-      <a href="#" class="d-flex link-white mx-4">
+      <a href="<%= portfolios_path %>" class="d-flex link-white mx-4">
         <i class="fa-solid fa-arrow-left p-1"></i>PROFILE
       </a>
     </div>
       <div class="addresses-grid">
         <% @portfolio.addresses.each do |address| %>
-          <div class="container-address">
+          <a class="container-address" href="<%= address_path(address.public_key) %>">
             <div class="icone-title">
               <%= image_tag("btc.png", class: "img-bitcoin") %>
               <h2><strong>BITCOIN</strong></h2>
             </div>
             <div class="key-balance">
               <p><%= "#{address.public_key[0..7]}...#{address.public_key[-8..-1]}" %></p>
-              <h2><strong>12322$</strong></h2>
+              <h2><strong data-controller="balance" data-balance-address-value="<%= address.public_key %>"></strong></h2>
             </div>
-          </div>
+          </a>
         <% end %>
       </div>
   </div>
   <div class="col-12 col-lg-6">
       <h3 class="text-pink my-4">RECENT TRANSACTIONS</h3>
       <div class="transactions">
-
+        <div class="container-transaction">
+          <div class="top-transaction">
+            <p><strong class="strong-white">FROM : </strong>1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</p>
+            <p class="strong-white"><strong>8h02 - 01/03/2023</strong></p>
+          </div>
+            <p><strong class="strong-white">TO : </strong>1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2</p>
+          <div class="bottom-transaction">
+              <p class="btc-yellow"><strong>0,635142 BTC</strong></p>
+              <p class="loading"><strong>PENDING</strong></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

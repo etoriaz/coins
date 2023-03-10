@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import BalanceController from "./balance_controller"
+application.register("balance", BalanceController)
+
 import ChartsController from "./charts_controller"
 application.register("charts", ChartsController)
 
