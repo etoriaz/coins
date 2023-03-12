@@ -27,12 +27,11 @@
         <div class="row">
 
           <div>
-            <%= f.input :public_key, :as => :text, placeholder: 'bc1q5crsrfueudwyfekp...', label:"Public Key", label_html: { style: "color: white;" } %>
+            <%= f.input :public_key, placeholder: 'bc1q5crsrfueudwyfekp...', label:"Add Addresses", label_html: { style: "color: white;" } %>
           </div>
 
           <div class="col-12 d-flex justify-content-end search-go">
-            <%# <%= f.submit "Go !", class: "violet-btn" %>
-            <a><%= link_to "Go !", portfolios_path, class:"violet-btn-home"%></a>
+            <%= f.submit "Go !", class: "violet-btn" %>
           </div>
 
         </div>
