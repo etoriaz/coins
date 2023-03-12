@@ -24,15 +24,17 @@
 // Card portfolio for the profile page (/portfolios)
 
 .container-portfolio-profile {
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   align-items: center;
   background-color: #2D2D2D;
   border-radius: 20px;
   box-shadow: black 0px 20px 30px -10px;;
-  width: 100%;
+  width: 90%;
   height: 59px;
   padding: 10px;
+  margin-right: 10%;
+  margin-left: 10%;
 }
 
 .container-banner {
@@ -43,8 +45,6 @@
   background-position: center;
 }
 
-
-
 .profile-content {
   display: flex;
   justify-content: center;
@@ -52,7 +52,6 @@
   padding-bottom: 30px;
   background: black;
 }
-
 
 .text-card-wallet {
   color: white;
@@ -77,8 +76,6 @@
   object-fit: cover;
 }
 
-
-
 .profile-container {
   background-color: #d63384;
   background-image: url('background-color.jpg');
@@ -87,7 +84,9 @@
 .wallets {
   width: 100%;
   margin-left: 15px;
-  margin-right: 10px
+  margin-right: 15px;
+  display: grid;
+  justify-items: center;
 }
 
 .chart-view {
@@ -100,4 +99,29 @@
 
 .fonts{
   font-size:11px;
+}
+
+.banner-profil {
+  margin-top: 105px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.title-wallet {
+  padding-top: 15px;
+  margin-left: 15px;
+}
+
+.background-color {
+  background-color: #151515;
+}
+
+.list-info {
+  width: 150px;
+  text-align: end;
+}
+
+.list-info-title {
+  width: 150px;
+  text-align: start;
 }
