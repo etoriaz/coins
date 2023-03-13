@@ -8,6 +8,7 @@
   flex-direction: column;
   justify-content: space-around;
   text-decoration: none;
+  transition: 1s;
 
   &:hover {
     background-color: $coins-pink;
@@ -60,17 +61,6 @@ p {
   color: white;
 }
 
-.icone-value {
-  font-size: 8px;
-  color: white;
-  margin: 5px;
-}
-.trash-icone-value {
-  font-size: 16px;
-  color: black;
-  margin-top: 2px;
-}
-
 .value-variante {
   font-size: 8px;
   color: white;
@@ -91,4 +81,23 @@ p {
   margin-bottom: -5px;
   margin-top: -7px;
   margin-left: 5px;
+}
+
+#value-crypto-card {
+  font-size: 20px;
+  color: white;
+  margin-bottom: -10px;
+  margin-top: -7px;
+  margin-right: 2px;
+}
+
+.icone-value-neg {
+  font-size: 8px;
+  color: rgb(255, 0, 0);
+  margin: 5px;
+}
+.icone-value-plus {
+  font-size: 8px;
+  color: rgb(0, 255, 177);
+  margin: 5px;
 }

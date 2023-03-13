@@ -35,6 +35,11 @@
   padding: 10px;
   margin-right: 5%;
   margin-left: 5%;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: $coins-pink;
+  }
 }
 
 .container-banner {
@@ -105,7 +110,6 @@
   font-size:11px;
 }
 
-
 .plus-link {
   background-color: #C74AE3;
   border: none;
@@ -131,7 +135,16 @@
 .wallet-button {
   display: flex;
   justify-content: space-between;
-  margin-top: 25px
+  margin-top: 25px;
+  transition: 0.3s;
+  height: 28px;
+  width: 50px;
+  border-radius: 8px;
+  background-color: #CC428A;
+
+  &:hover {
+    background-color: $coins-pink;
+  }
 }
 
 // Chart CSS on portfolio
@@ -195,4 +208,9 @@
 
 .title-view {
   padding-top: 15px;
+}
+
+#value-crypto-card {
+  font-size: 20px;
+  color: white;
 }

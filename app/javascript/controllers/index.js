@@ -4,14 +4,14 @@
 
 import { application } from "./application"
 
-import AddressesController from "./addresses_controller"
-application.register("addresses", AddressesController)
+// import AddressesController from "./addresses_controller"
+// application.register("addresses", AddressesController)
 
-import BalanceController from "./balance_controller"
-application.register("balance", BalanceController)
+// import BalanceController from "./balance_controller"
+// application.register("balance", BalanceController)
 
-import ChartsController from "./charts_controller"
-application.register("charts", ChartsController)
+// import ChartsController from "./charts_controller"
+// application.register("charts", ChartsController)
 
-import PortfoliosController from "./portfolios_controller"
-application.register("portfolios", PortfoliosController)
+// import PortfoliosController from "./portfolios_controller"
+// application.register("portfolios", PortfoliosController)
