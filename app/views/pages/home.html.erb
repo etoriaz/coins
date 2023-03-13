@@ -7,7 +7,7 @@
     <div class="container">
       <h1 class="first-title">YOUR CRYPTO AT A GLANCE WITH COINS</h1>
       <h4 class="sub-title">Generate your free dashboard in 5 minutes using the form!</h4>
-      <a class="btn-home-white start-btn font-btn" href="#">Start</a>
+      <a class="btn-home-white start-btn font-btn" href="#bottom-page">Start</a>
     </div>
     <div class="container img-align">
       <%= image_tag('cryptocurrency.jpg', class:"img-banner", size: '50')%>
@@ -22,25 +22,33 @@
   </div>
   <div>
   <h1 class="title title-search font-rainbows">ADD YOUR CRYPTO !</h1>
-      <%= simple_form_for @address do |f| %>
       <div class="container mt-4">
         <div class="row">
+          <%= form_with model: @portfolio, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
+            <template data-nested-form-target="template">
+              <%= f.fields_for :addresses, Address.new, child_index: 'NEW_RECORD' do |address_fields| %>
+                <%= render "shared/address_form", f: address_fields %>
+              <% end %>
+            </template>
 
-          <div>
-            <%= f.input :public_key, placeholder: 'bc1q5crsrfueudwyfekp...', label:"Add Addresses", label_html: { style: "color: white;" } %>
-          </div>
+            <%= f.fields_for :addresses, Address.new do |address_fields| %>
+              <%= render "shared/address_form", f: address_fields %>
+            <% end %>
 
-          <div class="col-12 d-flex justify-content-end search-go">
-            <%= f.submit "Go !", class: "violet-btn" %>
-          </div>
+            <div data-nested-form-target="target"></div>
 
+            <button type="button" class="violet-btn mx-auto" data-action="nested-form#add">+</button>
+
+            <div class="col-12 d-flex justify-content-end search-go">
+              <%= f.submit "Go !", class: "violet-btn" %>
+            </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
   </div>
 </div>
 
-<div class="team" style="background-color: rgb(21 21 21)">
+<div id="bottom-page" class="team" style="background-color: rgb(21 21 21)">
   <h1 class="title-card font-rainbows format-title-team">THE TEAM</h1>
     <div class="display-card">
       <div class="container-team">
@@ -65,7 +73,7 @@
           <h3 class="sub-title-team"><strong>FX</strong></h3>
           <p class="status-grey">UI / UX Dev</p>
         </div>
-        <%= image_tag("fx.png", class: "img-team")%>
+        <%= image_tag("fx-v2.png", class: "img-team")%>
       </div>
       <div class="container-team">
         <div class="team-left">
@@ -73,7 +81,7 @@
           <h3 class="sub-title-team"><strong>Irvin</strong></h3>
           <p class="status-grey">Back Dev</p>
         </div>
-        <%= image_tag("irving.png", class: "img-team")%>
+        <%= image_tag("irvin-v2.png", class: "img-team")%>
       </div>
     </div>
 

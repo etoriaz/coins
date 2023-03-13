@@ -15,4 +15,10 @@
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
+  transition: 0.3s;
+
+  &:hover {
+    color: rgb(199, 74, 227);
+    font-size: 30px;
+  }
 }

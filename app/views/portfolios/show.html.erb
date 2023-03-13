@@ -1,57 +1,93 @@
-<div class="banner" style="background-image: url(<%= image_path('background-color.jpg') %>); padding-inline: 2.5vw; height: 63vh; padding-top: 115px;">
-  <div class="d-flex justify-content-around">
-    <div class="bg-dark-grey d-flex align-items-center">
-      <canvas id="portfolioCanvas" aria-label="chart" role="img">
-      </canvas>
-    </div>
-  </div>
-</div>
-
-
-
-
-<div class="bg-dark-grey">
-  <div class="container p-5">
-  <div class="row">
-  <h2><%= @portfolio.name %></h2>
-  <div class="col-12 col-lg-6">
-    <div class="d-flex justify-content-between align-items-center">
-      <h3 class="text-pink my-4">ADDRESSES</h3>
-      <a href="<%= portfolios_path %>" class="d-flex link-white mx-4">
-        <i class="fa-solid fa-arrow-left p-1"></i>PROFILE
-      </a>
-    </div>
-      <div class="addresses-grid">
-        <% @portfolio.addresses.each do |address| %>
-          <a class="container-address" href="<%= address_path(address.public_key) %>">
-            <div class="icone-title">
-              <%= image_tag("btc.png", class: "img-bitcoin") %>
-              <h2><strong>BITCOIN</strong></h2>
-            </div>
-            <div class="key-balance">
-              <p><%= "#{address.public_key[0..7]}...#{address.public_key[-8..-1]}" %></p>
-              <h2><strong data-controller="balance" data-balance-address-value="<%= address.public_key %>"></strong></h2>
-            </div>
-          </a>
-        <% end %>
+<div data-controller="portfolios" data-portfolios-address-value="portfolio1">
+  <div class="banner" style="background-image: url(<%= image_path('background-color.jpg') %>); padding-inline: 2.5vw; height: 63vh; padding-top: 115px;">
+    <div class="d-flex justify-content-around">
+      <div class="bg-dark-grey d-flex align-items-center" style="height: 45vh; width: 90vw; border-radius: 20px;">
+        <canvas id="portfolioCanvas" aria-label="chart" role="img" class="my-auto">
+          <h1> TOTAL BITCOIN</h1>
+        </canvas>
       </div>
+    </div>
   </div>
-  <div class="col-12 col-lg-6" data-controller="message">
-      <h3 class="text-pink my-4">RECENT TRANSACTIONS</h3>
-      <div class="transactions">
-        <div class="container-transaction">
-          <div class="top-transaction">
-            <p><strong class="strong-white">FROM : </strong>1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</p>
-            <p class="strong-white"><strong>8h02 - 01/03/2023</strong></p>
+
+
+  <div class="bg-dark-grey">
+    <div class="container p-5">
+      <div class="row">
+      <h2><%= @portfolio.name %></h2>
+
+      <div class="col-12 col-lg-6">
+        <div class="d-flex justify-content-between align-items-center">
+          <h3 class="text-pink my-4">ADDRESSES</h3>
+          <a href="<%= portfolios_path %>" class="d-flex link-white mx-4">
+            <i class="fa-solid fa-arrow-left p-1"></i>PROFILE
+          </a>
+        </div>
+
+        <%# LIST DES ADDRESSES %>
+        <div class="addresses-grid">
+          <% @portfolio.addresses.each do |address| %>
+
+            <a class="container-address" href="<%= address_path(address.public_key) %>">
+            <div class="icone-title">
+                <div class="d-flex">
+                  <%= image_tag("logocard.png", class: "img-bitcoin") %>
+                  <div>
+                    <h2 id="title-btc"><strong>BITCOIN</strong></h2>
+
+                    <%# A CHECKER %>
+                    <div class="d-flex element-value">
+                    <% if ##### %>
+                      <i class="fa-solid fa-play icone-value-plus" style="transform: rotate(-90deg);"></i>
+                      <h4 class="value-variante">+ 5,25</h4>
+                    <% else %>
+                      <i class="fa-solid fa-play icone-value-neg" style="transform: rotate(90deg);"></i>
+                      <h4 class="value-variante">+ 5,25</h4>
+                    <% end %>
+                    </div>
+                  </div>
+
+
+                </div>
+                  <i class="fas fa-trash trash-icone-value"></i>
+            </div>
+
+            <div class="key-balance">
+                <div>
+                  <p id="paragraphe-card"><%= "#{address.public_key[0..7]}...#{address.public_key[-8..-1]}"%></p>
+                </div>
+                <div>
+                  <p id="value-crypto-card"><strong data-controller="balance" data-balance-address-value="<%= address.public_key %>"></strong></p>
+                </div>
+            </div>
+            </a>
+          <% end %>
+
+          <%# ADD CARD %>
+          <div class="container-address">
+            <h4 class="add-card"><strong>+</strong></h4>
           </div>
-            <p><strong class="strong-white">TO : </strong>1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2</p>
-          <div class="bottom-transaction">
-              <p class="btc-yellow"><strong>0,635142 BTC</strong></p>
-              <p class="loading"><strong>PENDING</strong></p>
-          </div>
+
         </div>
       </div>
+
+      <%# HISTORIQUE TRANSACTION %>
+      <div class="col-12 col-lg-6" data-controller="message">
+        <h3 class="text-pink my-4">RECENT TRANSACTIONS</h3>
+          <div class="transactions">
+            <div class="container-transaction">
+              <div class="top-transaction">
+                <p><strong class="strong-white">FROM : </strong>1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</p>
+                <p class="strong-white"><strong>8h02 - 01/03/2023</strong></p>
+              </div>
+                <p><strong class="strong-white">TO : </strong>1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2</p>
+              <div class="bottom-transaction">
+                <p class="btc-yellow"><strong>0,635142 BTC</strong></p>
+                <p class="loading"><strong>PENDING</strong></p>
+              </div>
+            </div>
+          </div>
+      </div>
+
     </div>
-  </div>
   </div>
 </div>

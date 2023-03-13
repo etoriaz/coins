@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
-    @address = Address.new
+    @portfolio = Portfolio.new
   end
 
   def chart
