@@ -4,32 +4,17 @@
 
 import { Application } from '@hotwired/stimulus'
 import NestedForm from 'stimulus-rails-nested-form'
+import Chart from 'stimulus-chartjs'
 
 const application = Application.start()
 application.register('nested-form', NestedForm)
+application.register('chart', Chart)
 
+import AddressesController from "./addresses_controller"
+application.register("addresses", AddressesController)
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
+import BalanceController from "./balance_controller"
+application.register("balance", BalanceController)
 
-import MessageController from "./message_controller"
-application.register("message", MessageController)
-
-import TransactionsController from "./transactions_controller"
-application.register("transactions", TransactionsController)
-
-// import { Application } from 'stimulus'
-// import Chart from 'stimulus-chartjs'
-
-// const application = Application.start()
-// application.register('chart', Chart)
-
-// import AddressesController from "./addresses_controller"
-// application.register("addresses", AddressesController)
-
-// import BalanceController from "./balance_controller"
-// application.register("balance", BalanceController)
-
-// import PortfoliosController from "./portfolios_controller"
-// application.register("portfolios", PortfoliosController)
-
+import PortfoliosController from "./portfolios_controller"
+application.register("portfolios", PortfoliosController)
