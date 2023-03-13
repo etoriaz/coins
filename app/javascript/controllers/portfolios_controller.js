@@ -1,6 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 import { getBitcoinData } from "../api/transactions"
 import { bitcoinPrice } from "../api/price"
+import { chartCreate } from "../charts/portfolio-chart"
 
 // Connects to data-controller="portfolios"
 export default class extends Controller {
