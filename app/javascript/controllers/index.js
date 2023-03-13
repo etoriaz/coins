@@ -8,11 +8,11 @@ import NestedForm from 'stimulus-rails-nested-form'
 const application = Application.start()
 application.register('nested-form', NestedForm)
 
-// import AddressesController from "./addresses_controller"
-// application.register("addresses", AddressesController)
+import AddressesController from "./addresses_controller"
+application.register("addresses", AddressesController)
 
-// import BalanceController from "./balance_controller"
-// application.register("balance", BalanceController)
+import BalanceController from "./balance_controller"
+application.register("balance", BalanceController)
 
-// import PortfoliosController from "./portfolios_controller"
-// application.register("portfolios", PortfoliosController)
+import PortfoliosController from "./portfolios_controller"
+application.register("portfolios", PortfoliosController)
