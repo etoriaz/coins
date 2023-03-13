@@ -23,6 +23,12 @@
   border-radius: 20px;
   box-shadow: 1px 1px 7px 1px white;
   position: relative;
+  transition: 1s;
+
+  &:hover {
+    width: 300px;
+    height: 185px;
+  }
 }
 
 .status-grey {
@@ -37,6 +43,8 @@
   height: 100%;
   padding-right: 10px;
   object-fit: cover;
+
+
 }
 
 .team-left {

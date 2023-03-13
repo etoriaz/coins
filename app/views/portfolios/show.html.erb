@@ -55,7 +55,7 @@
                   <p id="paragraphe-card"><%= "#{address.public_key[0..7]}...#{address.public_key[-8..-1]}"%></p>
                 </div>
                 <div>
-                  <p id="value-crypto-card"><strong>10 000 $</strong></p>
+                  <p id="value-crypto-card"><strong data-controller="balance" data-balance-address-value="<%= address.public_key %>"></strong></p>
                 </div>
             </div>
             </a>
