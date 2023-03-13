@@ -2,11 +2,8 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
-import { chartCreate } from "./charts/portfolio-chart"
-import { viewChartCreate } from "./charts/view-chart"
-import { bitcoinPrice, ethereumPrice, solanaPrice } from "./api/price"
-import { transactionsForBitcoinAddress } from "./api/transactions"
-import { getHistoryForAddress } from "./api/history"
+import NestedForm from 'stimulus-rails-nested-form'
+
 
 // bitcoinPrice("12h", getDateDaysAgo(90).getTime(), Date.now())
 //   .then((data) => { window.btcPrice = data })
