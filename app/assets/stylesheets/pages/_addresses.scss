@@ -16,6 +16,7 @@
   background-color: $coins-dark-grey;
   color: white;
   border-radius: 20px;
+  width: 250px;
 
   .name {
     font-size: 24px;
@@ -70,4 +71,12 @@
   justify-content: space-between;
   padding: 30px;
   border-radius: 20px;
+}
+
+.chart-address {
+  width: 75%;
+}
+
+.transactions-height {
+ min-height: 250px;
 }

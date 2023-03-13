@@ -1,58 +1,59 @@
-<div class="banner" style="background-image: url(<%= image_path('background-color.jpg') %>); padding-inline: 2.5vw; height: 63vh; padding-top: 115px;">
-  <div class="d-flex justify-content-around">
-    <div class="overview-address" style="width: 15vw;">
-      <div class="container p-4">
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="crypto-icon">
-            <%= image_tag "btc.png" %>
-          </div>
-          <div class="currency d-flex flex-column align-items-end">
-            <div class="name">BITCOIN</div>
-            <div class="text-success"><i class="fa-solid fa-triangle"></i> 5.24%</div>
-          </div>
-        </div>
-        <div class="address text-break mt-4"><%= params[:public_key] %></div>
-        <div class="separate"></div>
-        <div class="transactions">
-          <div class="d-flex justify-content-around align-items-center">
-            <i class="fa-solid fa-square-plus text-success"></i>
-            <div class="d-flex flex-column align-items-end">
-              <h3 class="text-success">INCOMING (53)</h3>
-              <div class="balance">1.652 BTC <i class="fa-solid fa-arrow-left"></i></div>
+
+  <div class="banner" style="background-image: url(<%= image_path('background-color.jpg') %>); padding-inline: 2.5vw; height: 63vh; padding-top: 115px;">
+    <div class="d-flex justify-content-around">
+      <div class="overview-address">
+        <div class="container pb-2 p-4">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="crypto-icon">
+              <%= image_tag "btc.png" %>
+            </div>
+            <div class="currency d-flex flex-column align-items-end mb-">
+              <div class="name">BITCOIN</div>
+              <div class="text-success"><i class="fa-solid fa-triangle"></i> 5.24%</div>
             </div>
           </div>
-          <div class="d-flex justify-content-around align-items-center mt-3">
-            <i class="fa-solid fa-square-minus text-danger"></i>
-            <div class="d-flex flex-column align-items-end">
-              <h3 class="text-danger">OUTGOING (47)</h3>
-              <div class="balance">1.421 BTC <i class="fa-solid fa-arrow-left"></i></div>
+          <div class="address text-break mt-4"><%= params[:public_key] %></div>
+          <div class="separate"></div>
+          <div class="transactions">
+            <div class="d-flex justify-content-around align-items-center">
+              <i class="fa-solid fa-square-plus text-success"></i>
+              <div class="d-flex flex-column align-items-end">
+                <h3 class="text-success">INCOMING (53)</h3>
+                <div class="balance">1.652 BTC <i class="fa-solid fa-arrow-left"></i></div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-around align-items-center mt-3">
+              <i class="fa-solid fa-square-minus text-danger"></i>
+              <div class="d-flex flex-column align-items-end">
+                <h3 class="text-danger">OUTGOING (47)</h3>
+                <div class="balance">1.421 BTC <i class="fa-solid fa-arrow-left"></i></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="separate"></div>
-        <div class="text-center">
-          <h3>VALUE</h3>
-          <h2>$11,342</h2>
+          <div class="separate"></div>
+          <div class="text-center">
+            <h3>VALUE</h3>
+            <h2>$11,342</h2>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="bg-dark-grey d-flex align-items-center" style="height: 45vh; width: 75vw; border-radius: 20px;" data-controller="charts">
-      <canvas id="portfolioCanvas" aria-label="chart" role="img" class="my-auto">
-        <h1> TOTAL BITCOIN</h1>
-      </canvas>
+      <div class="chart-address bg-dark-grey d-flex align-items-center" style="height: 47vh; border-radius: 20px;" data-controller="charts">
+        <canvas id="portfolioCanvas" aria-label="chart" role="img" class="my-auto">
+          <h1> TOTAL BITCOIN</h1>
+        </canvas>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="bg-dark-grey">
-  <div class="container p-5">
-    <div class="d-flex align-items-center justify-content-between mb-4">
-      <h2>RECENT TRANSACTIONS</h2>
-      <a href="<%= portfolio_path(@address.portfolio) %>" class="d-flex link-white">
-        <i class="fa-solid fa-arrow-left p-1"></i>PORTFOLIO
-      </a>
-    </div>
-    <div data-controller="transactions" data-transactions-address-value="<%= params[:public_key] %>">
+  <div class="transactions-height bg-dark-grey">
+    <div class="container p-5">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <h2>RECENT TRANSACTIONS</h2>
+        <a href="<%= portfolio_path(@address.portfolio) %>" class="d-flex link-white">
+          <i class="fa-solid fa-arrow-left p-1"></i>PORTFOLIO
+        </a>
+      </div>
+      <div data-controller="transactions" data-transactions-address-value="<%= params[:public_key] %>">
+      </div>
     </div>
   </div>
-</div>
