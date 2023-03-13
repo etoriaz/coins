@@ -1,12 +1,6 @@
-const transactionsForBitcoinAddress = async (address, days, txs=[], offset=0) => {
-  const since = Date.now() - days * 86_400_000
-  const res = await fetch(`https://blockchain.info/rawaddr/${address}?offset=${offset}`)
-  const data = await res.json()
-  txs.push(...data.txs)
-  if (txs[txs.length - 1].time * 1000 > since) {
-    await transactionsForBitcoinAddress(address, days, txs, offset + 100)
-  }
-  return txs
+const getBitcoinData = async (address) => {
+  const res = await fetch(`https://api.blockcypher.com/v1/btc/main/addrs/${address}/full?limit=50&token=45533959044c4f84b7e75039c257110c`)
+  return await res.json()
 }
 
-export { transactionsForBitcoinAddress }
+export { getBitcoinData }
