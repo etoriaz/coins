@@ -1,89 +1,50 @@
+import { Chart } from 'chart.js'
 const viewChartCreate = () => {
   Chart.defaults.font.family = "Arial";
 
-  const plugin = {
-    id: 'customCanvasBackgroundColor',
-    beforeDraw: (chart, args, options) => {
-      const {ctx} = chart;
-      ctx.save();
-      ctx.globalCompositeOperation = 'destination-over';
-      ctx.fillStyle = options.color || '#99ffff';
-      ctx.fillRect(0, 0, chart.width, chart.height);
-      ctx.restore();
-    }
+  const viewCanvas = document.getElementById('viewCanvas');
+  const data =  {
+    labels: ['top crypto trader', 'top trader etc', 'novice investor', 'btc top 10', 'advanced trading'],
+    datasets: [{
+      label: 'Portfolio distribution',
+      data: [116, 40, 55, 5, 10],
+      backgroundColor: []
+    }]
   };
 
-  const portfolioCanvas = document.getElementById('viewCanvas');
-  const pieChart = new Chart ('viewCanvas', {
-    backgroundColor: "",
-    type: 'pie',
-    data: {
-      labels: ['top crypto trader'],
-      datasets: [{
-        tension: 0.4,
-        pointHoverRadius: 10,
-        label: 'Portfolio Value',
-        data: [100],
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
-        borderColor: 'rgba(255, 153, 0, 1)',
-        borderWidth: 2,
-        borderRadius: 2,
-      }]
-    },
-    plugins: [plugin],
-    options: {
-      aspectRatio: 4,
-      plugins: {
-        customCanvasBackgroundColor: {
-          color: '',
-        }
-      },
-        legend: {
-          display: false,
-        },
+  const colors = ['#FAAE7B', '#CC8B79', '#9F6976', '#714674', '#432371', '#B2A496', '#9D8977', '#886E58', '#735238', '#5E3719', '#2f3e46', '#354f52', '#52796f', '#84a98c', '#cad2c5', '#caf0f8', '#90e0ef', '#00b4d8', '#0077b6', '#03045e'];
 
-      scales: {
-        y: {
-          beginAtZero: true,
-          scaleLabel: {
-            display: false,
-            labelString: 'Portfolio distribution'
-          },
-          ticks: {
-            display: false,
-            font: {
-              size: 24
-            }
-          },
-          grid: {
-            display: false
-        }
-        },
-        x: {
-          scaleLabel: {
-            display: true,
-            labelString: 'Month'
-          },
-          ticks: {
-            callback: function(value, index){
-              console.log(this.getLabelForValue())
-                if (this.getLabelForValue(index) == 0 || index === value.length - 1) {
-                  return this.getLabelForValue(value)
-                } else {
-                  return ''
-                }
-            },
-            font: {
-              size: 12,
-            }
-          },
-          grid: {
-            display: false,
-        },
+  for (let i = 0; i < data.datasets[0].data.length; i++) {
+    const color = colors[i % colors.length];
+    data.datasets[0].backgroundColor.push(color);
+  }
+
+  const pieChart = new Chart (viewCanvas, {
+    type: 'pie',
+    data: data,
+    options: {
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: (context) => {
+            let sum = 0;
+            let dataArr = context.chart.data.datasets[0].data;
+            dataArr.forEach(data => {
+              sum += data;
+            });
+            let value = context.parsed;
+            let percentage = ((value*100) / sum).toFixed(2) + "%";
+            return `Porfolio distribution: ${percentage}`;
+          }
+      }
         }
       }
     }
-  })
-}
+  });
+};
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   viewChartCreate();
+// });
 
 export { viewChartCreate }

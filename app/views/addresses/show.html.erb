@@ -1,4 +1,4 @@
-
+<div data-controller="addresses" data-addresses-address-value="<%= params[:public_key] %>">
   <div class="banner" style="background-image: url(<%= image_path('background-color.jpg') %>); padding-inline: 2.5vw; height: 63vh; padding-top: 115px;">
     <div class="d-flex justify-content-around">
       <div class="overview-address">
@@ -7,7 +7,8 @@
             <div class="crypto-icon">
               <%= image_tag "btc.png" %>
             </div>
-            <div class="currency d-flex flex-column align-items-end mb-">
+            <div class="currency d-flex flex-column align-items-end">
+
               <div class="name">BITCOIN</div>
               <div class="text-success"><i class="fa-solid fa-triangle"></i> 5.24%</div>
             </div>
@@ -37,14 +38,13 @@
           </div>
         </div>
       </div>
-      <div class="chart-address bg-dark-grey d-flex align-items-center" style="height: 47vh; border-radius: 20px;" data-controller="charts">
+      <div class="chart-address bg-dark-grey d-flex align-items-center" style="height: 47vh; border-radius: 20px;">
         <canvas id="portfolioCanvas" aria-label="chart" role="img" class="my-auto">
           <h1> TOTAL BITCOIN</h1>
         </canvas>
       </div>
     </div>
   </div>
-
   <div class="transactions-height bg-dark-grey">
     <div class="container p-5">
       <div class="d-flex align-items-center justify-content-between mb-4">
@@ -53,7 +53,7 @@
           <i class="fa-solid fa-arrow-left p-1"></i>PORTFOLIO
         </a>
       </div>
-      <div data-controller="transactions" data-transactions-address-value="<%= params[:public_key] %>">
+      <div data-addresses-target="transactions">
       </div>
     </div>
   </div>
