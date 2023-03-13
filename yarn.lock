@@ -317,7 +317,7 @@ caniuse-lite@^1.0.30001449:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001460.tgz#31d2e26f0a2309860ed3eff154e03890d9d851a7"
   integrity sha512-Bud7abqjvEjipUkpLs4D7gR0l8hBYBHoa+tGtKJHvT2AYzLp1z7EmVkUT4ERpVUfca8S2HGIVs883D8pUH1ZzQ==
 
-chart.js@^4.2.1:
+chart.js@^4.1.1, chart.js@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-4.2.1.tgz#d2bd5c98e9a0ae35408975b638f40513b067ba1d"
   integrity sha512-6YbpQ0nt3NovAgOzbkSSeeAQu/3za1319dPUQTXn9WcOpywM8rGKxJHrhS8V8xEkAlk8YhEfjbuAPfUyp6jIsw==
@@ -718,6 +718,13 @@ source-map@^0.6.0:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
+
+stimulus-chartjs@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/stimulus-chartjs/-/stimulus-chartjs-5.0.0.tgz#0f7d6e40358328ea8bf16085c188b166f7a85cfc"
+  integrity sha512-3w5pHaQ+W2Zw5od+Dkh636YkHpWUp6xzgh4p9a0pQ29rVoUJHPqkeUU52nNsCohqarnjiXl3W3EnxTA5lgV8pQ==
+  dependencies:
+    chart.js "^4.1.1"
 
 supports-color@^8.0.0:
   version "8.1.1"

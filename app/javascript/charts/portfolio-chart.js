@@ -1,16 +1,7 @@
-import Chart from 'chart.js/auto'
+import Chart from 'chart.js/auto';
 import 'chartjs-adapter-luxon'
 
 const chartCreate = () => {
-
-  // Chart.Tooltip.positioners.fixed = function(items) {
-  //   const chart = this.chart;
-  //   return {
-  //     x: chart.chartArea.left + (chart.chartArea.right - chart.chartArea.left) / 2,
-  //     y: 100,
-  //     xAlign: "center"
-  //   }
-  // }
   Chart.defaults.font.family = "Arial";
 
   const plugin = {
@@ -25,100 +16,96 @@ const chartCreate = () => {
     }
   };
 
-  const portfolioCanvas = document.getElementById('portfolioCanvas');
-  const lineChart = new Chart ('portfolioCanvas', {
-    backgroundColor: "#F9BEB3",
-    type: 'line',
-    data: {
-      labels: 'Portfolio Value',
-      datasets: [{
-        tension: 0.4,
-        pointHoverRadius: 10,
-        label: ['top crypto trader', 'fefe'],
-        data: [100, 10],
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
-        borderColor: 'rgba(255, 153, 0, 1)',
-        borderWidth: 2,
-        borderRadius: 2,
-        fill: {
-        target: 'origin',
-        above: 'rgba(255, 153, 0, 0.2)',
-        below: 'rgba(255, 153, 0, 0.2)'
-        }
-      }]
-    },
-    plugins: [plugin],
-    options: {
-      aspectRatio: 4,
-      plugins: {
-        customCanvasBackgroundColor: {
-          color: '#151515',
-        },
-        legend: {
-          display: false,
-        },
-        tooltip: {
-          xAlign: 'center'
-        }
+  const portfolioCanvas = document.getElementById('portfolioCanvas')
+  if (portfolioCanvas) {
+    const lineChart = new Chart(portfolioCanvas, {
+      backgroundColor: "#F9BEB3",
+      type: 'line',
+      data: {
+        labels: ['Jan 2022', 'Feb 2022', 'Mar 2022', 'Apr 2022', 'May 2022', 'Jun 2022', 'Jul 2022'],
+        datasets: [{
+          tension: 0.4,
+          pointHoverRadius: 10,
+          label: ['Porfolio Value'],
+          data: [12000, 10000, 18000, 19000, 11000, 17000, 20000],
+          backgroundColor: 'rgba(255, 255, 255, 0.8)',
+          borderColor: 'rgba(255, 153, 0, 1)',
+          borderWidth: 2,
+          borderRadius: 2,
+          fill: {
+          target: 'origin',
+          above: 'rgba(255, 153, 0, 0.2)',
+          below: 'rgba(255, 153, 0, 0.2)'
+          }
+        }]
       },
-      scales: {
-        y: {
-          scaleLabel: {
-            display: false,
-            labelString: 'Portfolio Value'
+      plugins: [plugin],
+      options: {
+        aspectRatio: 4,
+        plugins: {
+          customCanvasBackgroundColor: {
+            color: '#151515',
           },
-          ticks: {
+          legend: {
             display: false,
-            font: {
-              size: 24
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                const contextValue = context.dataset.data[context.dataIndex];
+                const result = contextValue.toLocaleString().replace(/,/g, ' ').split('.')[0];
+                if (contextValue.toString().indexOf('.') !== -1) {
+                  result += contextValue.toString().slice(contextValue.toString().indexOf('.'));
+                }
+                return `$${result}`
+              }
             }
-          },
-          grid: {
-            display: false
-        }
+          }
         },
-        x: {
-          type: "time",
-          time: {
-            unit: "month"
-          },
-          scaleLabel: {
-            display: true,
-            labelString: 'Month'
-          },
-          ticks: {
-            callback: function(value, index){
-              if (index === 0 || index === labels.length - 1) {
-                return this.getLabelForValue(value);
-              } else {
-                return '';
+        scales: {
+          y: {
+            scaleLabel: {
+              display: false,
+
+            },
+            ticks: {
+              display: false,
+              font: {
+                size: 24
               }
             },
-            font: {
-              size: 12,
+            grid: {
+              display: false
             }
           },
-          grid: {
-            display: false,
+          x: {
+            scaleLabel: {
+              display: true,
+              labelString: 'Month'
+            },
+            ticks: {
+              font: {
+                size: 12,
+              }
+            },
+            grid: {
+              display: false,
+            },
+          },
         },
-        }
-      },
-      elements: {
-        point: {
-          radius: 0
-        }
-      },
-      interaction: {
-        mode: 'nearest',
-        axis: 'x',
-        intersect: false
-      },
-      hover: {
-        intersect: false,
-        pointRadius: 10
+        interaction: {
+          mode: 'nearest',
+          axis: 'x',
+          intersect: false
+        },
+        elements: {
+          point: {
+            radius: 0
+          }
+        },
       }
-    }
-  })
+    })
+  }
 }
 
 export { chartCreate }

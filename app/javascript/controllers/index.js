@@ -7,9 +7,6 @@ import { application } from "./application"
 import BalanceController from "./balance_controller"
 application.register("balance", BalanceController)
 
-import ChartsController from "./charts_controller"
-application.register("charts", ChartsController)
-
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
@@ -19,3 +16,8 @@ application.register("message", MessageController)
 import TransactionsController from "./transactions_controller"
 application.register("transactions", TransactionsController)
 
+// import { Application } from 'stimulus'
+// import Chart from 'stimulus-chartjs'
+
+// const application = Application.start()
+// application.register('chart', Chart)
