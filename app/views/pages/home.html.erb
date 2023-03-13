@@ -20,31 +20,34 @@
         <div class="cache-logo"></div>
         <iframe src='https://my.spline.design/untitled-f53ed9f96027b1afe0a1657257688a16/' frameborder='0' width='100%' height='100%' class="imgform spline-watermark"></iframe>
   </div>
-  <div>
-  <h1 class="title title-search font-rainbows">ADD YOUR CRYPTO !</h1>
-      <div class="container mt-4">
-        <div class="row">
-          <%= form_with model: @portfolio, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
-            <template data-nested-form-target="template">
-              <%= f.fields_for :addresses, Address.new, child_index: 'NEW_RECORD' do |address_fields| %>
-                <%= render "shared/address_form", f: address_fields %>
-              <% end %>
-            </template>
 
-            <%= f.fields_for :addresses, Address.new do |address_fields| %>
+  <div>
+    <h1 class="title title-search font-rainbows">ADD YOUR CRYPTO !</h1>
+    <div class="container">
+      <div class="row">
+
+        <%= form_with model: @portfolio, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
+          <template data-nested-form-target="template">
+            <%= f.fields_for :addresses, Address.new, child_index: 'NEW_RECORD' do |address_fields| %>
               <%= render "shared/address_form", f: address_fields %>
             <% end %>
+          </template>
 
-            <div data-nested-form-target="target"></div>
-
-            <button type="button" class="violet-btn mx-auto" data-action="nested-form#add">+</button>
-
-            <div class="col-12 d-flex justify-content-end search-go">
-              <%= f.submit "Go !", class: "violet-btn" %>
-            </div>
+          <%= f.fields_for :addresses, Address.new do |address_fields| %>
+            <%= render "shared/address_form", f: address_fields %>
           <% end %>
-        </div>
+
+          <div data-nested-form-target="target"></div>
+
+          <button type="button" class="violet-btn mx-auto" data-action="nested-form#add">+</button>
+
+          <div class="col-12 d-flex justify-content-end search-go">
+            <%= f.submit "Go !", class: "violet-btn" %>
+          </div>
+
+        <% end %>
       </div>
+    </div>
   </div>
 </div>
 
