@@ -1,54 +1,55 @@
 <div>
+     <video autoplay loop muted plays-inline class="back-video">
+      <source src="backcolor.mp4" type="video/mp4">
+     </video>
 
-   <video autoplay loop muted plays-inline class="back-video">
-    <source src="backcolor.mp4" type="video/mp4">
-  </video>
-
-  <div class='wrapper-banner banner-profil'>
-    <div class="row d-flex justify-content-center container-banner">
-      <div class="card-profile-banner p-3 py-4">
-        <div class="text-center">
-          <%= image_tag("homme-photo.png", size: '80x80', class: 'profile-image')%>
-        </div>
-        <div class="text-center mt-3">
-          <h2 class="mt-2 mb-0 profile-name"> <%= current_user.username.capitalize %></h5>
-          <p class='profession-title'>Crypto enthusiast #HODL</p>
+      <div class='wrapper-banner banner-profil'>
+        <div class="row d-flex justify-content-center container-banner">
+          <div class="card-profile-banner p-3 py-4">
+            <div class="text-center">
+              <%= image_tag("homme-photo.png", size: '80x80', class: 'profile-image')%>
+            </div>
+            <div class="text-center mt-3">
+              <h2 class="mt-2 mb-0 profile-name"> <%= current_user.username.capitalize %></h5>
+              <p class='profession-title'>Crypto enthusiast #HODL</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="d-flex">
-    <div class="background-color">
-        <h1 class='font-rainbows title-wallet'> Wallets</h1>
-        <div class="profile-content bg-dark-grey">
-          <div class="wallets">
-            <div class="wallet-button">
-              <h1 class='font-rainbows'> Wallets</h1>
-              <a href="#" class="plus-link"><span>+</span></a>
-            </div>
+      <div class="background-color d-flex">
+
+      <div class="width-wallet container">
+          <h1 class='font-rainbows title-wallet'> Wallets</h1>
+            <div class="profile-content bg-dark-grey">
+            <div class="wallets">
+              <div class="wallet-button">
+                <h1 class='font-rainbows'> Wallets</h1>
+                <a href="#" class="plus-link"><span>+</span></a>
+              </div>
               <% @user_portfolios.each do |portfolio| %>
-            <div class="container-portfolio-profile mt-3">
-              <%= image_tag("btc2.png", class: "img-portfolio")%>
-              <div class="list-info-title"><h4 class="text-card-wallet"> <%= portfolio.name.upcase %></h4></div>
-              <div class="list-info"><h4 class="text-card-wallet"> : </h4></div>
-              <div class="list-info"><h4 class="text-card-wallet">86</h4></div>
-              <div class="list-info"><h4 class="text-card-wallet">addresses</h4></div>
-              <i class="fas fa-trash m-3"></i>
-            </div>
+              <div class="container-portfolio-profile mt-3">
+                <%= image_tag("btc2.png", class: "img-portfolio")%>
+                  <div class="list-info-title"><h4 class="text-card-wallet"> <%= portfolio.name.upcase %></h4></div>
+                  <div class="list-info"><h4 class="text-card-wallet"> : </h4></div>
+                  <div class="list-info"><h4 class="text-card-wallet">86</h4></div>
+                  <div class="list-info"><h4 class="text-card-wallet">addresses</h4></div>
+                <i class="fas fa-trash m-3"></i>
+              </div>
               <% end %>
-          </div>
-         </div>
-      </div>
-
-      <div class="chart-view">
-        <h1 class='font-rainbows'>View</h1>
-        <div class="chartCard">
-          <div class="chartBox">
-            <canvas id="viewCanvas" aria-label="distributionChart" role="img"></canvas>
-          </div>
+            </div>
+            </div>
         </div>
-      </div>
-    </div>
+
+        <div class="chart-view">
+          <h1 class='font-rainbows'>View</h1>
+            <div class="chartCard">
+              <div class="chartBox">
+                <canvas id="viewCanvas" aria-label="distributionChart" role="img"></canvas>
+              </div>
+            </div>
+        </div>
+        </div>
  
   </div>
+
