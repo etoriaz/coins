@@ -43,8 +43,6 @@
   background-position: center;
 }
 
-
-
 .profile-content {
   display: flex;
   justify-content: center;
@@ -52,7 +50,6 @@
   padding-bottom: 30px;
   background: black;
 }
-
 
 .text-card-wallet {
   color: white;
@@ -77,21 +74,21 @@
   object-fit: cover;
 }
 
-
-
 .profile-container {
   background-color: #d63384;
   background-image: url('background-color.jpg');
 }
 
 .wallets {
-  width: 100%;
-  margin-left: 15px;
-  margin-right: 10px
+  width: 70%;
+  margin-left: 3em;
+  margin-right: 1em
 }
 
 .chart-view {
-  padding: 0 10px;
+  margin-top: 25px;
+  margin-left: 1em;
+  margin-right: 3em;
 }
 
 .profile-banner {
@@ -100,4 +97,48 @@
 
 .fonts{
   font-size:11px;
+}
+
+.plus-link {
+  background-color: #C74AE3;
+  border: none;
+  border-radius: 4%;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 80px;
+  text-decoration: none;
+  margin-top: 4px;
+}
+
+.plus-link span {
+  font-size: 25px;
+  padding: 10px
+}
+
+.wallet-button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px
+}
+
+// Chart CSS on portfolio
+.chartCard {
+  width: 50vw;
+  background: (255, 26, 104, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px
+}
+
+.chartBox {
+  width: 100%;
+  height: 70vh;
+  border-radius: 20px;
+  border: solid 3px rgba(199, 74, 227, 1);
+  background: white ;
 }
