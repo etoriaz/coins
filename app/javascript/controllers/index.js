@@ -8,6 +8,22 @@ import NestedForm from 'stimulus-rails-nested-form'
 const application = Application.start()
 application.register('nested-form', NestedForm)
 
+
+import HelloController from "./hello_controller"
+application.register("hello", HelloController)
+
+import MessageController from "./message_controller"
+application.register("message", MessageController)
+
+import TransactionsController from "./transactions_controller"
+application.register("transactions", TransactionsController)
+
+// import { Application } from 'stimulus'
+// import Chart from 'stimulus-chartjs'
+
+// const application = Application.start()
+// application.register('chart', Chart)
+
 // import AddressesController from "./addresses_controller"
 // application.register("addresses", AddressesController)
 
@@ -16,3 +32,4 @@ application.register('nested-form', NestedForm)
 
 // import PortfoliosController from "./portfolios_controller"
 // application.register("portfolios", PortfoliosController)
+
