@@ -22,20 +22,28 @@
   </div>
   <div>
   <h1 class="title title-search font-rainbows">ADD YOUR CRYPTO !</h1>
-      <%= simple_form_for @address do |f| %>
       <div class="container mt-4">
         <div class="row">
+          <%= form_with model: @portfolio, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
+            <template data-nested-form-target="template">
+              <%= f.fields_for :addresses, Address.new, child_index: 'NEW_RECORD' do |address_fields| %>
+                <%= render "shared/address_form", f: address_fields %>
+              <% end %>
+            </template>
 
-          <div>
-            <%= f.input :public_key, placeholder: 'bc1q5crsrfueudwyfekp...', label:"Add Addresses", label_html: { style: "color: white;" } %>
-          </div>
+            <%= f.fields_for :addresses, Address.new do |address_fields| %>
+              <%= render "shared/address_form", f: address_fields %>
+            <% end %>
 
-          <div class="col-12 d-flex justify-content-end search-go">
-            <%= f.submit "Go !", class: "violet-btn" %>
-          </div>
+            <div data-nested-form-target="target"></div>
 
+            <button type="button" class="violet-btn mx-auto" data-action="nested-form#add">+</button>
+
+            <div class="col-12 d-flex justify-content-end search-go">
+              <%= f.submit "Go !", class: "violet-btn" %>
+            </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
   </div>
 </div>
