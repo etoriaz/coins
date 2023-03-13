@@ -91,6 +91,8 @@
 
 .chart-view {
   padding: 0 10px;
+  width: 35%;
+  min-height: 485px;
 }
 
 .profile-banner {
@@ -124,4 +126,8 @@
 .list-info-title {
   width: 150px;
   text-align: start;
+}
+
+.width-wallet {
+  width: 65%;
 }
