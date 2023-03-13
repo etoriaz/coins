@@ -33,8 +33,8 @@
   width: 90%;
   height: 59px;
   padding: 10px;
-  margin-right: 10%;
-  margin-left: 10%;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 
 .container-banner {
@@ -58,6 +58,13 @@
   font-size: 12px;
   margin-bottom: 0;
 }
+.text-card-wallet-num {
+  color: white;
+  font-size: 12px;
+  margin-bottom: 0;
+  margin-right: -40%;
+}
+
 .profession-title {
   color: #ffffff;
   font-size: 15px;
@@ -89,11 +96,6 @@
   justify-items: center;
 }
 
-.chart-view {
-  padding: 0 10px;
-  width: 35%;
-  min-height: 485px;
-}
 
 .profile-banner {
   background-color: black;
@@ -113,15 +115,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
-  width: 80px;
+  height: 28px;
+  width: 50px;
   text-decoration: none;
-  margin-top: 4px;
 }
 
 .plus-link span {
   font-size: 25px;
-  padding: 10px
+  text-align: center;
+  height: 28px;
+  width: 50px;
+  margin-bottom: 14px;
 }
 
 .wallet-button {
@@ -132,12 +136,12 @@
 
 // Chart CSS on portfolio
 .chartCard {
-  width: 50vw;
   background: (255, 26, 104, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 25px
+  margin-top: 25px;
+  margin-right: 35px
 }
 
 .chartBox {
@@ -147,7 +151,7 @@
   border: solid 3px rgba(199, 74, 227, 1);
   background: white ;
   }
-  
+
 .banner-profil {
   margin-top: 105px;
   margin-left: 30px;
@@ -174,5 +178,21 @@
 }
 
 .width-wallet {
-  width: 65%;
+  width: 50%;
+  margin-right: 25px;
+}
+
+.display-title-x-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chart-view {
+  padding: 0 10px;
+  width: 50%;
+  min-height: 485px;
+}
+
+.title-view {
+  padding-top: 15px;
 }
