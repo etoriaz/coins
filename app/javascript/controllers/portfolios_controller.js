@@ -80,7 +80,7 @@ export default class extends Controller {
   }
 
   insertChart() {
-
+    chartCreate(window.portfolioData.history.timestamps, window.portfolioData.history.values)
   }
 
   connect() {
