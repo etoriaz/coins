@@ -20,36 +20,48 @@
       <div class="background-color d-flex">
 
       <div class="width-wallet container">
-          <h1 class='font-rainbows title-wallet'> Wallets</h1>
-            <div class="profile-content bg-dark-grey">
-            <div class="wallets">
-              <div class="wallet-button">
-                <h1 class='font-rainbows'> Wallets</h1>
-                <a href="#" class="plus-link"><span>+</span></a>
-              </div>
+          <div class="display-title-x-button">
+            <h1 class='font-rainbows title-wallet text-pink'> Wallets</h1>
+            <div class="wallet-button">
+              <a href="#" class="plus-link"><span>+</span></a>
+            </div>
+          </div>
+          <div class="profile-content bg-dark-grey">
+            <div class="Portfolios">
               <% @user_portfolios.each do |portfolio| %>
               <div class="container-portfolio-profile mt-3">
-                <%= image_tag("btc2.png", class: "img-portfolio")%>
+                <%= link_to(portfolio_path(portfolio)) do %>
+                  <%= image_tag("btc2.png", class: "img-portfolio")%>
+                <% end %>
+                <%= link_to(portfolio_path(portfolio), style: "text-decoration:none;") do %>
                   <div class="list-info-title"><h4 class="text-card-wallet"> <%= portfolio.name.upcase %></h4></div>
-                  <div class="list-info"><h4 class="text-card-wallet"> : </h4></div>
-                  <div class="list-info"><h4 class="text-card-wallet">86</h4></div>
+                <% end %>
+                <%= link_to(portfolio_path(portfolio), style: "text-decoration:none;") do %>
+                  <div class="list-info"><h4 class="text-card-wallet-num">86</h4></div>
+                <% end %>
+                <%= link_to(portfolio_path(portfolio), style: "text-decoration:none;") do %>
                   <div class="list-info"><h4 class="text-card-wallet">addresses</h4></div>
-                <i class="fas fa-trash m-3"></i>
+                <% end %>
+                <%= link_to(portfolio_path(portfolio), style: "text-decoration:none;") do %>
+                  <i class="fas fa-trash m-3"></i>
+                <% end %>
               </div>
               <% end %>
             </div>
-            </div>
+          </div>
         </div>
 
-        <div class="chart-view">
-          <h1 class='font-rainbows'>View</h1>
-            <div class="chartCard">
-              <div class="chartBox">
-                <canvas id="viewCanvas" aria-label="distributionChart" role="img"></canvas>
-              </div>
+        <div class="chart-view container">
+          <div class="display-title-x-button">
+            <h1 class='font-rainbows title-view text-pink'>View</h1>
+          </div>
+
+          <div class="chartCard">
+            <div class="chartBox">
+              <canvas id="viewCanvas" aria-label="distributionChart" role="img"></canvas>
             </div>
+          </div>
         </div>
-        </div>
- 
+
+      </div>
   </div>
-

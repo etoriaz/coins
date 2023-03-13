@@ -5,9 +5,12 @@
 
   <% if user_signed_in? %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
-          <li class="navbar-items">
+      <ul class="navbar-nav me-auto">
+        <li class="navbar-items d-flex">
           <a><%= link_to "Log out", destroy_user_session_path, data: { "turbo-method": :delete }, class:"btn-home-white font-btn" %></a>
+          <%= link_to(portfolios_path) do %>
+            <%= image_tag("homme-photo.png", size: '42x42', class: 'profile-image-navbar')%>
+          <% end %>
       </ul>
     </div>
 
@@ -15,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="navbar-items">
-            <a><%= link_to "Sign In", new_user_registration_path, class:"btn-home-white font-btn"%></a>
+            <a><%= link_to "Sign Up", new_user_registration_path, class:"btn-home-white font-btn"%></a>
           </li>
           <li class="navbar-items">
             <a><%= link_to "Log In", user_session_path, class:"btn-home-white font-btn"%></a>

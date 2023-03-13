@@ -1,10 +1,9 @@
 .container-address {
   background-color: #2D2D2D;
-  border-radius: 20px;
+  border-radius:15px;
   box-shadow: black 0px 20px 30px -10px;
-  width: 286px;
-  height: 89px;
-  padding: 20px;
+  height: 69px;
+  padding: 10px 7px 10px 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -22,26 +21,16 @@
 }
 
 .icone-title {
-  display:flex;
-  align-items: center;
-
-  h2 {
-    margin-bottom: 0;
-  }
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: -5px;
 }
 
 .key-balance {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-
-  p {
-    margin-bottom: 0;
-  }
-
-  h2 {
-    margin-bottom: 0;
-  }
 }
 
 h2 {
@@ -55,12 +44,51 @@ p {
 }
 
 .img-bitcoin {
-  width: 27px;
-  height: 27px;
+  width: 40px;
+  height: 35px;
 }
 
 .addresses-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+}
+
+.add-card {
+  font-size: 50px;
+  text-align: center;
+  color: white;
+}
+
+.icone-value {
+  font-size: 8px;
+  color: white;
+  margin: 5px;
+}
+.trash-icone-value {
+  font-size: 16px;
+  color: black;
+  margin-top: 2px;
+}
+
+.value-variante {
+  font-size: 8px;
+  color: white;
+}
+
+.element-value {
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-left: 2px;
+  margin-top: -5px;
+}
+
+#title-btc {
+  margin-bottom: 0;
+}
+
+#paragraphe-card {
+  margin-bottom: -5px;
+  margin-top: -7px;
+  margin-left: 5px;
 }
