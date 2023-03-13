@@ -1,14 +1,14 @@
 .container-address {
   background-color: #2D2D2D;
-  border-radius: 20px;
+  border-radius:15px;
   box-shadow: black 0px 20px 30px -10px;
-  width: 286px;
-  height: 89px;
-  padding: 20px;
+  height: 69px;
+  padding: 10px 7px 10px 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   text-decoration: none;
+  transition: 1s;
 
   &:hover {
     background-color: $coins-pink;
@@ -22,26 +22,16 @@
 }
 
 .icone-title {
-  display:flex;
-  align-items: center;
-
-  h2 {
-    margin-bottom: 0;
-  }
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: -5px;
 }
 
 .key-balance {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-
-  p {
-    margin-bottom: 0;
-  }
-
-  h2 {
-    margin-bottom: 0;
-  }
 }
 
 h2 {
@@ -55,12 +45,59 @@ p {
 }
 
 .img-bitcoin {
-  width: 27px;
-  height: 27px;
+  width: 40px;
+  height: 35px;
 }
 
 .addresses-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
+}
+
+.add-card {
+  font-size: 50px;
+  text-align: center;
+  color: white;
+}
+
+.value-variante {
+  font-size: 8px;
+  color: white;
+}
+
+.element-value {
+  justify-content: flex-start;
+  align-items: baseline;
+  margin-left: 2px;
+  margin-top: -5px;
+}
+
+#title-btc {
+  margin-bottom: 0;
+}
+
+#paragraphe-card {
+  margin-bottom: -5px;
+  margin-top: -7px;
+  margin-left: 5px;
+}
+
+#value-crypto-card {
+  font-size: 20px;
+  color: white;
+  margin-bottom: -10px;
+  margin-top: -7px;
+  margin-right: 2px;
+}
+
+.icone-value-neg {
+  font-size: 8px;
+  color: rgb(255, 0, 0);
+  margin: 5px;
+}
+.icone-value-plus {
+  font-size: 8px;
+  color: rgb(0, 255, 177);
+  margin: 5px;
 }

@@ -33,4 +33,11 @@
   padding-bottom: var(--bs-navbar-brand-padding-y);
   margin-right: 15px;
   text-decoration: none;
+  align-items: center;
+}
+
+.profile-image-navbar {
+  border-radius: 100%;
+  object-fit: cover;
+  margin-left: 15px;
 }
