@@ -6,10 +6,10 @@ export default class extends Controller {
   static values = { address: String }
 
   connect() {
-    console.log(this.addressValue)
-    getBalance(this.addressValue)
-      .then((data) => {
-        this.element.innerText = (data.balance / 100_000_000).toString() + " BTC"
-      })
+    // console.log(this.addressValue)
+    // getBalance(this.addressValue)
+    //   .then((data) => {
+    //     this.element.innerText = (data.balance / 100_000_000).toString() + " BTC"
+    //   })
   }
 }

@@ -1,7 +1,7 @@
 import Chart from 'chart.js/auto'
 import 'chartjs-adapter-luxon'
 
-const chartCreate = (timestamps, values) => {
+const chartCreate = () => {
 
   // Chart.Tooltip.positioners.fixed = function(items) {
   //   const chart = this.chart;
@@ -30,12 +30,12 @@ const chartCreate = (timestamps, values) => {
     backgroundColor: "#F9BEB3",
     type: 'line',
     data: {
-      labels: timestamps,
+      labels: 'Portfolio Value',
       datasets: [{
         tension: 0.4,
         pointHoverRadius: 10,
-        label: 'Portfolio Value',
-        data: values,
+        label: ['top crypto trader', 'fefe'],
+        data: [100, 10],
         backgroundColor: 'rgba(255, 255, 255, 0.8)',
         borderColor: 'rgba(255, 153, 0, 1)',
         borderWidth: 2,
@@ -88,7 +88,7 @@ const chartCreate = (timestamps, values) => {
           },
           ticks: {
             callback: function(value, index){
-              if (index === 0 || index === timestamps.length - 1) {
+              if (index === 0 || index === labels.length - 1) {
                 return this.getLabelForValue(value);
               } else {
                 return '';

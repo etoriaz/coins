@@ -23,7 +23,11 @@
         <h1 class='font-rainbows title-wallet'> Wallets</h1>
         <div class="profile-content bg-dark-grey">
           <div class="wallets">
-          <% @user_portfolios.each do |portfolio| %>
+            <div class="wallet-button">
+              <h1 class='font-rainbows'> Wallets</h1>
+              <a href="#" class="plus-link"><span>+</span></a>
+            </div>
+              <% @user_portfolios.each do |portfolio| %>
             <div class="container-portfolio-profile mt-3">
               <%= image_tag("btc2.png", class: "img-portfolio")%>
               <div class="list-info-title"><h4 class="text-card-wallet"> <%= portfolio.name.upcase %></h4></div>
@@ -32,16 +36,19 @@
               <div class="list-info"><h4 class="text-card-wallet">addresses</h4></div>
               <i class="fas fa-trash m-3"></i>
             </div>
-          <% end %>
-        </div>
-    </div>
+              <% end %>
+          </div>
+         </div>
+      </div>
 
-      <%# <div class="chart-view">
+      <div class="chart-view">
         <h1 class='font-rainbows'>View</h1>
-        <canvas id="viewCanvas" aria-label="chart" role="img">
-          <h1> TOTAL BITCOIN</h1>
-        </canvas>
-      </div> %>
-    <%# </div> %>
+        <div class="chartCard">
+          <div class="chartBox">
+            <canvas id="viewCanvas" aria-label="distributionChart" role="img"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
   </div>
-</div>
