@@ -48,6 +48,11 @@ const chartCreate = (timestamps, values) => {
       },
       plugins: [plugin],
       options: {
+        layout: {
+          padding:{
+            bottom: 20
+          }
+        },
         aspectRatio: 4,
         plugins: {
           customCanvasBackgroundColor: {
@@ -87,9 +92,6 @@ const chartCreate = (timestamps, values) => {
             },
             ticks: {
               display: false,
-              font: {
-                size: 24
-              }
             },
             grid: {
               display: false
@@ -97,18 +99,11 @@ const chartCreate = (timestamps, values) => {
           },
           x: {
             scaleLabel: {
-              display: true,
+              display: false,
               labelString: 'Month'
             },
             ticks: {
-              font: {
-                size: 12,
-              },
-              callback: function(value, index) {
-                if (index % 2 === 0) {
-                  return this.getLabelForValue(value)
-                }
-              }
+              display: false
             },
             grid: {
               display: false,
