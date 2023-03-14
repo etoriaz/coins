@@ -13,20 +13,19 @@ class PortfoliosController < ApplicationController
 
   def create
     @portfolio = Portfolio.new(params_portfolio)
-    if user_signed_in?
-      @portfolio.user = current_user
-    end
+    @portfolio.user = current_user if user_signed_in?
+    @portfolio.name = 'Untitled portfolio' unless @portfolio.name
 
-    @portfolio.name = "Untitled portfolio"
-
-    if @portfolio.save
-      RestClient.post("https://api.blockcypher.com/v1/btc/main/wallets?token=45533959044c4f84b7e75039c257110c",
-        {
-          name: "portfolio#{@portfolio.id}",
-          addresses: @portfolio.addresses.map { |address| address.public_key }
-        }.to_json,
-        content_type: :json
-      )
+    if @portfolio.save!
+      Thread.new do
+        RestClient.post("https://api.blockcypher.com/v1/btc/main/wallets?token=45533959044c4f84b7e75039c257110c",
+          {
+            name: "portfolio#{@portfolio.id}",
+            addresses: @portfolio.addresses.map { |address| address.public_key }
+          }.to_json,
+          content_type: :json
+        )
+      end
       redirect_to portfolio_path(@portfolio)
     else
       render 'pages/home', status: :unprocessable_entity

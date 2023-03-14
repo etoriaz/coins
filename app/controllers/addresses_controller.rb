@@ -4,7 +4,6 @@ class AddressesController < ApplicationController
   end
 
   def create
-    raise
     @address = Address.new(address_params)
     if @address.save
       redirect_to address_path(@address)
