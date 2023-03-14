@@ -33,7 +33,7 @@ export default class extends Controller {
 
         let tmpBalance = data.balance
         let lastPrice = priceData.pop()
-        let tx = txs.pop()
+        let tx = txs.pop() || { confirmed: 0 }
         priceData.reverse().forEach((price) => {
           while (price[6] < new Date(tx.confirmed).getTime()) {
             tx.inputs.forEach((input) => {
@@ -46,7 +46,7 @@ export default class extends Controller {
                 tmpBalance -= output.value
               }
             })
-            tx = txs.pop()
+            tx = txs.pop() || { confirmed: 0 }
             if (tx == null) {
               break
             }
