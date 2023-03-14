@@ -1,4 +1,4 @@
-<div data-controller="portfolios" data-portfolios-address-value="portfolio1">
+<div data-controller="portfolios" data-portfolios-address-value="portfolio<%= @portfolio.id %>">
   <div class="banner" style="background-image: url(<%= image_path('background-color.jpg') %>); padding-inline: 2.5vw; height: 63vh; padding-top: 115px;">
     <div class="d-flex justify-content-around">
       <div class="bg-dark-grey d-flex align-items-center" style="height: 47vh; width: 96.625%; border-radius: 20px; position: relative;">
@@ -31,9 +31,7 @@
         <%# LIST DES ADDRESSES %>
         <div data-controller="balance" class="addresses-grid">
           <% @portfolio.addresses.each do |address| %>
-
-            <a class="container-address" href="<%= address_path(address.public_key) %>">
-
+            <a class="container-address" href="<%= address_path(address) %>">
             <div class="icone-title">
                 <div class="d-flex">
                   <%= image_tag("logocard.png", class: "img-bitcoin") %>
