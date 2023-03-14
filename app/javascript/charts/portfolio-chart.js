@@ -73,7 +73,6 @@ const chartCreate = (timestamps, values) => {
                 return `${formattedValue}`
               },
               title: function(context) {
-
                 const date = context[0].label
                 return `${date}`
               }
