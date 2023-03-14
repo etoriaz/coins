@@ -1,7 +1,12 @@
 <div data-controller="portfolios" data-portfolios-address-value="portfolio<%= @portfolio.id %>">
   <div class="banner" style="background-image: url(<%= image_path('background-color.jpg') %>); padding-inline: 2.5vw; height: 63vh; padding-top: 115px;">
     <div class="d-flex justify-content-around">
-      <div class="bg-dark-grey d-flex align-items-center" style="height: 45vh; width: 90vw; border-radius: 20px;">
+      <div class="bg-dark-grey d-flex align-items-center" style="height: 47vh; width: 96.625%; border-radius: 20px; position: relative;">
+        <div class="logo-bitcoin d-flex">
+          <%= image_tag('btc1.png', size:"80")%>
+          <h1 class="totalbtc">TOTAL</h1>
+          <h1 class="totalbtc2">BITCOIN</h1>
+        </div>
         <canvas id="portfolioCanvas" aria-label="chart" role="img" class="my-auto">
           <h1> TOTAL BITCOIN</h1>
         </canvas>
@@ -17,7 +22,7 @@
 
       <div class="col-12 col-lg-6">
         <div class="d-flex justify-content-between align-items-center">
-          <h3 class="text-pink my-4">ADDRESSES</h3>
+          <h3 class="text-pink font-rainbows my-4">ADDRESSES</h3>
           <a href="<%= portfolios_path %>" class="d-flex link-white mx-4">
             <i class="fa-solid fa-arrow-left p-1"></i>PROFILE
           </a>
@@ -26,7 +31,6 @@
         <%# LIST DES ADDRESSES %>
         <div data-controller="balance" class="addresses-grid">
           <% @portfolio.addresses.each do |address| %>
-
             <a class="container-address" href="<%= address_path(address) %>">
             <div class="icone-title">
                 <div class="d-flex">
@@ -45,8 +49,6 @@
                     <% end %>
                     </div>
                   </div>
-
-
                 </div>
                   <i class="fas fa-trash trash-icone-value"></i>
             </div>
@@ -59,13 +61,17 @@
                   <p id="value-crypto-card"><strong data-balance-target="balance" data-address="<%= address.public_key %>"></strong></p>
                 </div>
             </div>
+
             </a>
           <% end %>
 
           <%# ADD CARD %>
           <div class="container-address">
-            <h4 class="add-card"><strong>+</strong></h4>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><h1><strong>+</strong></h1></button>
           </div>
+
+
+
 
         </div>
       </div>
@@ -75,6 +81,25 @@
         <h3 class="text-pink font-rainbows my-4">RECENT TRANSACTIONS</h3>
         <div data-portfolios-target="transactions">
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add an address</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <input class="form-control" type="text" id="name" name="name" placeholder="address..." required>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary">Save your address</button>
       </div>
     </div>
   </div>
