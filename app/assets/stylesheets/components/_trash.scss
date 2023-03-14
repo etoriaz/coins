@@ -10,3 +10,15 @@
   margin-top: 2px;
   }
 }
+
+.trash-icone-value-v2 {
+  font-size: 20px;
+  color: white;
+  margin-top: 2px;
+  transition: 0.5s;
+
+  &:hover {
+  color: red;
+  margin-top: 2px;
+  }
+}
