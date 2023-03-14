@@ -33,7 +33,7 @@ export default class extends Controller {
 
         let tmpBalance = data.balance
         let lastPrice = priceData.pop()
-        let tx = txs.pop()
+        let tx = txs.pop() || { confirmed: 0 }
         priceData.reverse().forEach((price) => {
           while (price[6] < new Date(tx.confirmed).getTime()) {
             tx.inputs.forEach((input) => {
@@ -46,10 +46,7 @@ export default class extends Controller {
                 tmpBalance -= output.value
               }
             })
-            tx = txs.pop()
-            if (tx == null) {
-              break
-            }
+            tx = txs.pop() || { confirmed: 0 }
           }
 
           window.portfolioData.history.timestamps.push(lastPrice[6])
@@ -59,6 +56,7 @@ export default class extends Controller {
 
         window.portfolioData.history.timestamps.reverse()
         window.portfolioData.history.values.reverse()
+        this.insertChart()
       })
   }
 
@@ -105,7 +103,6 @@ export default class extends Controller {
 
         this.insertTransactions()
         this.buildHistory(data, "12h", 90)
-        this.insertChart()
       })
   }
 }
