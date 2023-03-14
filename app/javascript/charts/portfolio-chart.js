@@ -1,6 +1,7 @@
 import Chart from 'chart.js/auto';
 import 'chartjs-adapter-luxon'
 
+
 const chartCreate = (timestamps, values) => {
 
   Chart.defaults.font.family = "Arial";
@@ -17,13 +18,18 @@ const chartCreate = (timestamps, values) => {
     }
   };
 
+  const formattedDates = timestamps.map(timestamp => {
+    const date = new Date(timestamp);
+    return date.toLocaleDateString("en-GB");
+  });
+
   const portfolioCanvas = document.getElementById('portfolioCanvas')
   if (portfolioCanvas) {
     const lineChart = new Chart(portfolioCanvas, {
       backgroundColor: "#F9BEB3",
       type: 'line',
       data: {
-        labels: timestamps,
+        labels: formattedDates,
         datasets: [{
           tension: 0.4,
           pointHoverRadius: 10,
@@ -67,9 +73,8 @@ const chartCreate = (timestamps, values) => {
                 return `${formattedValue}`
               },
               title: function(context) {
-                const date = parseInt(context[0].label, 10)
-                const formattedDate = new Date(date).toLocaleDateString("en-GB")
-                return `${formattedDate}`
+                const date = context[0].label
+                return `${date}`
               }
             }
           }
