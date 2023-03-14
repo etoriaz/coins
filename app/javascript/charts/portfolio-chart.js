@@ -1,7 +1,7 @@
 import Chart from 'chart.js/auto';
 import 'chartjs-adapter-luxon'
 
-const chartCreate = (data, timestamps) => {
+const chartCreate = (timestamps, data) => {
   Chart.defaults.font.family = "Arial";
 
   const plugin = {
@@ -53,11 +53,11 @@ const chartCreate = (data, timestamps) => {
             callbacks: {
               label: function(context) {
                 const contextValue = context.dataset.data[context.dataIndex];
-                const result = contextValue.toLocaleString().replace(/,/g, ' ').split('.')[0];
-                if (contextValue.toString().indexOf('.') !== -1) {
-                  result += contextValue.toString().slice(contextValue.toString().indexOf('.'));
-                }
-                return `$${result}`
+                // const result = contextValue.toLocaleString().replace(/,/g, ' ').split('.')[0];
+                // if (contextValue.toString().indexOf('.') !== -1) {
+                //   result += contextValue.toString().slice(contextValue.toString().indexOf('.'));
+                // }
+                return `$${contextValue}`
               }
             }
           }
