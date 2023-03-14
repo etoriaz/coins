@@ -6,7 +6,7 @@ class AddressesController < ApplicationController
   def create
     @address = Address.new(address_params)
     if @address.save!
-      redirect_to portfolio_path(address.portfolio)
+      redirect_to portfolio_path(@address.portfolio)
     else
       render 'portfolios/show', status: :unprocessable_entity
     end
