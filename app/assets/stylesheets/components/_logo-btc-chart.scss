@@ -1,0 +1,35 @@
+.logo-bitcoin {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  z-index: 10;
+  top: 14px;
+  left: 16px;
+  background-color: #ff9900;
+  box-shadow: inset -4px -4px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.logo-bitcoin2 {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  z-index: 10;
+  top: 13px;
+  left: 14px;
+  background-color: #ff9900;
+  box-shadow: inset -4px -4px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.totalbtc {
+  margin-left: 20px;
+  font-size: 40px;
+  color: white;
+}
+
+.totalbtc2 {
+  margin-left: 10px;
+  font-size: 40px;
+  color: white;
+}

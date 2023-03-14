@@ -69,3 +69,65 @@
       color: #FFFFFF;
     }
   }
+
+
+  // FORM HOME //
+  .trash-form {
+    background-color: transparent;
+    border: 1.5px solid transparent;
+    border-radius: 10px;
+    width: 50px;
+  }
+
+  .form-control-v2 {
+    background-color: transparent;
+    color: white;
+    border: 1.5px solid white;
+    border-radius: 10px;
+    width: 450px;
+    height: 35px;
+    transition: 0.5s;
+    padding: 7px 10px 7px 20px;
+
+    &:hover {
+      box-shadow: 1px 1px 5px white;
+      border: 2px solid white;
+    }
+  }
+
+  .btn-home-fome {
+    background-color: #2D2D2D;
+    border: 1.5px solid transparent;
+    border-radius: 10px;
+    width: 50px;
+    transition: 0.5s;
+    color: white;
+    font-size: 20px;
+    width: 450px;
+    margin-right: 15px;
+
+    &:hover {
+      background-color: rgba(199, 74, 227, 0.3);
+      border: 2px solid white;
+    }
+  }
+
+  .btn-go-form {
+    background-color: #2D2D2D;
+    border: 1.5px solid transparent;
+    border-radius: 10px;
+    transition: 0.5s;
+    color: white;
+    font-size: 15px;
+    width: 50px;
+
+    &:hover {
+      background-color: rgba(199, 74, 227, 0.3);
+      border: 2px solid white;
+    }
+  }
+
+  .display-div-add-and-go {
+    display: flex;
+    justify-content: space-between;
+  }

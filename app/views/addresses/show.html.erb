@@ -38,7 +38,12 @@
           </div>
         </div>
       </div>
-      <div class="chart-address bg-dark-grey d-flex align-items-center" style="height: 47vh; border-radius: 20px;">
+      <div class="chart-address bg-dark-grey d-flex align-items-center" style="height: 47vh; border-radius: 20px; position: relative;">
+        <div class="logo-bitcoin2 d-flex">
+          <%= image_tag('btc1.png', size:"80")%>
+          <h1 class="totalbtc">TOTAL</h1>
+          <h1 class="totalbtc2">BITCOIN</h1>
+        </div>
         <canvas id="portfolioCanvas" aria-label="chart" role="img" class="my-auto">
           <h1> TOTAL BITCOIN</h1>
         </canvas>
@@ -56,6 +61,7 @@
       </div>
       <div data-addresses-target="transactions">
       </div>
+
     </div>
 
   </div>
