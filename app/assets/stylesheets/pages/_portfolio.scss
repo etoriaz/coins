@@ -13,3 +13,12 @@
 .modal-title {
   color: $light-gray;
 }
+
+.modal-footer {
+  border-top: transparent;
+  margin-bottom: 12px;
+}
+
+.modal-header {
+  border-bottom: transparent;
+}

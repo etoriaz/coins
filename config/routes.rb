@@ -11,5 +11,4 @@ Rails.application.routes.draw do
   get "/addresses/:id", to: "addresses#show"
   resources :transactions, only: :show
   resources :addresses, only: %i[show create]
-  post "/addresses", to: "addresses#show"
 end
