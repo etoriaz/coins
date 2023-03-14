@@ -19,7 +19,6 @@ const chartCreate = (timestamps, values) => {
   };
 
   const portfolioCanvas = document.getElementById('portfolioCanvas')
-  console.log(portfolioCanvas)
   if (portfolioCanvas) {
     const lineChart = new Chart(portfolioCanvas, {
       backgroundColor: "#F9BEB3",
@@ -100,6 +99,11 @@ const chartCreate = (timestamps, values) => {
             ticks: {
               font: {
                 size: 12,
+              },
+              callback: function(value, index) {
+                if (index % 2 === 0) {
+                  return this.getLabelForValue(value)
+                }
               }
             },
             grid: {
