@@ -8,6 +8,7 @@ class PortfoliosController < ApplicationController
   end
 
   def show
+    @address = Address.new
     @portfolio = Portfolio.find(params[:id])
   end
 

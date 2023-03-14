@@ -4,18 +4,17 @@ class AddressesController < ApplicationController
   end
 
   def create
-    raise
     @address = Address.new(address_params)
-    if @address.save
-      redirect_to address_path(@address)
+    if @address.save!
+      redirect_to portfolio_path(address.portfolio)
     else
-      render 'pages/home', status: :unprocessable_entity
+      render 'portfolios/show', status: :unprocessable_entity
     end
   end
 
   private
 
   def address_params
-    params.require(:address).permit(:public_key, :blockchain)
+    params.require(:address).permit(:public_key, :blockchain, :portfolio_id)
   end
 end
