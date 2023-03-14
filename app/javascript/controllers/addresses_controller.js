@@ -35,7 +35,6 @@ export default class extends Controller {
         let lastPrice = priceData.pop()
         let tx = txs.pop() || { confirmed: 0 }
         priceData.reverse().forEach((price) => {
-          console.log(tx)
           while (price[6] < new Date(tx.confirmed).getTime()) {
             tx.inputs.forEach((input) => {
               if (data.address === input.addresses[0]) {
