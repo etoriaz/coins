@@ -1,7 +1,8 @@
 import Chart from 'chart.js/auto';
 import 'chartjs-adapter-luxon'
 
-const chartCreate = (timestamps, data) => {
+const chartCreate = (timestamps, values) => {
+
   Chart.defaults.font.family = "Arial";
 
   const plugin = {
@@ -17,6 +18,7 @@ const chartCreate = (timestamps, data) => {
   };
 
   const portfolioCanvas = document.getElementById('portfolioCanvas')
+  console.log(portfolioCanvas)
   if (portfolioCanvas) {
     const lineChart = new Chart(portfolioCanvas, {
       backgroundColor: "#F9BEB3",
@@ -27,7 +29,7 @@ const chartCreate = (timestamps, data) => {
           tension: 0.4,
           pointHoverRadius: 10,
           label: ['Porfolio Value'],
-          data: data,
+          data: values,
           backgroundColor: 'rgba(255, 255, 255, 0.8)',
           borderColor: 'rgba(255, 153, 0, 1)',
           borderWidth: 2,
@@ -50,14 +52,25 @@ const chartCreate = (timestamps, data) => {
             display: false,
           },
           tooltip: {
+            displayColors: false,
+            bodyFont: {
+              size: 18
+            },
             callbacks: {
               label: function(context) {
-                const contextValue = context.dataset.data[context.dataIndex];
-                // const result = contextValue.toLocaleString().replace(/,/g, ' ').split('.')[0];
-                // if (contextValue.toString().indexOf('.') !== -1) {
-                //   result += contextValue.toString().slice(contextValue.toString().indexOf('.'));
-                // }
-                return `$${contextValue}`
+                const value = context.dataset.data[context.dataIndex];
+                const formattedValue = new Intl.NumberFormat('en-US', {
+                  style: 'currency',
+                  currency:'USD',
+                  minimumFractionDigits: value % 1 != 0 ? 2 : 0,
+                  maximumFractionDigits: value % 1 != 0 ? 2 : 0
+                }).format(value);
+                return `${formattedValue}`
+              },
+              title: function(context) {
+                const date = parseInt(context[0].label, 10)
+                const formattedDate = new Date(date).toLocaleDateString("en-GB")
+                return `${formattedDate}`
               }
             }
           }
