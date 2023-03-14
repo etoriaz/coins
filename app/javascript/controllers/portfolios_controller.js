@@ -59,6 +59,7 @@ export default class extends Controller {
 
         window.portfolioData.history.timestamps.reverse()
         window.portfolioData.history.values.reverse()
+        this.insertChart()
       })
   }
 
@@ -99,7 +100,6 @@ export default class extends Controller {
 
         this.insertTransactions()
         this.buildHistory(data, "12h", 90)
-        this.insertChart()
       })
   }
 }
