@@ -1,5 +1,5 @@
 <div class="nested-form-wrapper my-3 d-flex justify-content-between gap-3" data-new-record="<%= f.object.new_record? %>">
-  <%= f.text_field :public_key, placeholder: 'bc1q5crsrfueudwyfekp...', class: "form-control" %>
-  <button type="button" data-action="nested-form#remove" class="violet-btn d-inline">-</button>
+  <%= f.text_field :public_key, placeholder: 'bc1q5crsrfueudwyfekp...', class: "form-control-v2" %>
+  <button type="button" data-action="nested-form#remove" class="trash-form"><i class="fas fa-trash trash-icone-value-v2"></i></button>
   <%= f.hidden_field :_destroy %>
 </div>
