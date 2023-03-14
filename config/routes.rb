@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   get "/component", to: "pages#component"
 
-  get "/addresses/:public_key", to: "addresses#show"
+  get "/addresses/:id", to: "addresses#show"
   resources :transactions, only: :show
   resources :addresses, only: %i[show create]
 end
