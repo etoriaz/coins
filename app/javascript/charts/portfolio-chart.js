@@ -1,7 +1,7 @@
 import Chart from 'chart.js/auto';
 import 'chartjs-adapter-luxon'
 
-const chartCreate = () => {
+const chartCreate = (timestamps, values) => {
   Chart.defaults.font.family = "Arial";
 
   const plugin = {
@@ -23,12 +23,12 @@ const chartCreate = () => {
       backgroundColor: "#F9BEB3",
       type: 'line',
       data: {
-        labels: [1676249400000, 1676261100000, 1676268900000, 1676331600000, 1676347800000, 1676434200000, 1676485800000],
+        labels: timestamps,
         datasets: [{
           tension: 0.4,
           pointHoverRadius: 10,
           label: ['Porfolio Value'],
-          data: [12000, 10000, 18000, 1923.230, 647.83, 17000, 20000],
+          data: values,
           backgroundColor: 'rgba(255, 255, 255, 0.8)',
           borderColor: 'rgba(255, 153, 0, 1)',
           borderWidth: 2,
