@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module Coins
   class Application < Rails::Application
+    def default_url_options
+      { host: ENV["DOMAIN"] || "localhost:3000" }
+    end
     config.generators do |generate|
       generate.assets false
       generate.helper false

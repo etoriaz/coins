@@ -36,8 +36,8 @@ const viewChartCreate = () => {
               let value = context.parsed;
               let percentage = ((value*100) / sum).toFixed(2) + "%";
               return `Porfolio distribution: ${percentage}`;
+              }
             }
-        }
           }
         }
       }
