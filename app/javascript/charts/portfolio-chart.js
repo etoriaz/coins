@@ -97,18 +97,11 @@ const chartCreate = (timestamps, values) => {
           },
           x: {
             scaleLabel: {
-              display: true,
+              display: false,
               labelString: 'Month'
             },
             ticks: {
-              font: {
-                size: 12,
-              },
-              callback: function(value, index) {
-                if (index % 2 === 0) {
-                  return this.getLabelForValue(value)
-                }
-              }
+              display: false
             },
             grid: {
               display: false,

@@ -59,8 +59,8 @@
             <h1 class='text-pink font-rainbows'>View</h1>
           </div>
           <div class="chartCard">
-            <div class="chartBox" data-controller="portfolios-distribution" data-portfolios-distribution-portfolios-value="<%= @user_portfolios.map { |portfolio| portfolio.name }.join(",") %>">
-              <canvas data-action="click->portfolios-distribution#connect" id="viewCanvas" aria-label="distributionChart" role="img"></canvas>
+            <div class="chartBox" data-controller="portfolios-distribution" data-portfolios-distribution-portfolios-value="<%= @user_portfolios.map { |portfolio| portfolio.name.upcase } %>" data-portfolios-distribution-addresses-value="<%= @user_portfolios.map { |portfolio| portfolio.addresses.count } %>">
+              <canvas id="viewCanvas" aria-label="distributionChart" role="img"></canvas>
             </div>
           </div>
         </div>
