@@ -39,23 +39,12 @@
             <div class="container-address">
               <%= link_to address_path(address), class: "w-100" do %>
                 <div class="icone-title">
-                    <div class="d-flex">
-                      <%= image_tag("logocard.png", class: "img-bitcoin") %>
-                      <div>
-                        <h2 id="title-btc"><strong>BITCOIN</strong></h2>
-
-                        <%# A CHECKER %>
-                        <div class="d-flex element-value">
-                        <% if ##### %>
-                          <i class="fa-solid fa-play icone-value-plus" style="transform: rotate(-90deg);"></i>
-                          <h4 class="value-variante">+ 5,25</h4>
-                        <% else %>
-                          <i class="fa-solid fa-play icone-value-neg" style="transform: rotate(90deg);"></i>
-                          <h4 class="value-variante">+ 5,25</h4>
-                        <% end %>
-                        </div>
-                      </div>
+                  <div class="d-flex">
+                    <%= image_tag("logocard.png", class: "img-bitcoin") %>
+                    <div>
+                      <h2 id="title-btc"><strong>BITCOIN</strong></h2>
                     </div>
+                  </div>
                 </div>
 
                 <div class="key-balance">
