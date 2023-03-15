@@ -10,12 +10,8 @@ import { application } from "./application"
 // import BalanceController from "./balance_controller"
 // application.register("balance", BalanceController)
 
-import PortfolioDistributionController from "./portfolio_distribution_controller"
-application.register("portfolio-distribution", PortfolioDistributionController)
-
 // import PortfoliosController from "./portfolios_controller"
 // application.register("portfolios", PortfoliosController)
 
 import PortfoliosDistributionController from "./portfolios_distribution_controller"
 application.register("portfolios-distribution", PortfoliosDistributionController)
-
