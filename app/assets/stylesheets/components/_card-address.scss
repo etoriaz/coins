@@ -5,10 +5,12 @@
   height: 69px;
   padding: 10px 7px 10px 5px;
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
-  text-decoration: none;
   transition: 1s;
+
+  a {
+    text-decoration: none;
+  }
 
   &:hover {
     background-color: $coins-pink;
@@ -80,7 +82,8 @@ p {
 #paragraphe-card {
   margin-bottom: -5px;
   margin-top: -7px;
-  margin-left: 5px;
+  margin-left: 15px;
+  padding-top: 9px
 }
 
 #value-crypto-card {
@@ -100,4 +103,8 @@ p {
   font-size: 8px;
   color: rgb(0, 255, 177);
   margin: 5px;
+}
+
+.delete-button-address {
+  z-index: 10;
 }
