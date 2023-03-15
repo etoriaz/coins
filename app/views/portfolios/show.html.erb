@@ -18,7 +18,12 @@
   <div class="bg-dark-grey">
     <div class="container p-5">
       <div class="row">
-      <h2><%= @portfolio.name %></h2>
+      <h2 class="d-flex" data-controller="edit-portfolio-name"
+          data-edit-portfolio-name-authenticity-token-value="<%= form_authenticity_token %>"
+          data-edit-portfolio-name-portfolio-id-value="<%= @portfolio.id %>">
+      <span data-edit-portfolio-name-target="portfolioName" data-action="focusout->edit-portfolio-name#finishEdit keydown->edit-portfolio-name#finishEdit">
+      <%= @portfolio.name %>
+      </span> <div class="link-white align-self-center px-3" data-action="click->edit-portfolio-name#edit"><i class="fa-solid fa-pencil"></i></div></h2>
 
       <div class="col-12 col-lg-6">
         <div class="d-flex justify-content-between align-items-center">
@@ -90,7 +95,7 @@
   </div>
 </div>
 
-<!-- Modal -->
+<!-- Add Address Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

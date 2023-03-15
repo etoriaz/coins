@@ -10,6 +10,9 @@ application.register("addresses", AddressesController)
 import BalanceController from "./balance_controller"
 application.register("balance", BalanceController)
 
+import EditPortfolioNameController from "./edit_portfolio_name_controller"
+application.register("edit-portfolio-name", EditPortfolioNameController)
+
 import PortfoliosController from "./portfolios_controller"
 application.register("portfolios", PortfoliosController)
 
