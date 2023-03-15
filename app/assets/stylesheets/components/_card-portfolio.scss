@@ -1,3 +1,4 @@
+// BANNER //
 .container-portfolio {
   display: flex;
   justify-content: space-between;
@@ -10,11 +11,6 @@
   padding: 10px;
 }
 
-.img-portfolio {
-  width: 40px;
-  height: 40px;
-}
-
 .text-white {
   color: white;
   font-size: 16px;
@@ -23,49 +19,12 @@
 
 // Card portfolio for the profile page (/portfolios)
 
-.container-portfolio-profile {
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #2D2D2D;
-  border-radius: 20px;
-  box-shadow: black 0px 20px 30px -10px;
-  width: 100%;
-  height: 59px;
-  padding: 10px;
-  transition: 0.5s;
-
-  &:hover {
-    background-color: $coins-pink;
-  }
-}
-
 .container-banner {
   background-image: url('crypto-background-profile.jpg');
   margin: 30px 50px;
   border-radius: 10px;
   background-size: cover;
   background-position: center;
-}
-
-.profile-content {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  padding-bottom: 30px;
-  background: black;
-}
-
-.text-card-wallet {
-  color: white;
-  font-size: 12px;
-  margin-bottom: 0;
-}
-.text-card-wallet-num {
-  color: white;
-  font-size: 12px;
-  margin-bottom: 0;
-  margin-right: -40%;
 }
 
 .profession-title {
@@ -99,7 +58,6 @@
   justify-items: center;
 }
 
-
 .profile-banner {
   background-color: black;
 }
@@ -109,11 +67,11 @@
 }
 
 .plus-link {
-    color: white;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .plus-link span {
@@ -123,38 +81,6 @@
   width: 50px;
   margin-bottom: 14px;
 }
-
-.wallet-button {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 9px;
-  transition: 0.3s;
-  height: 32px;
-  width: 50px;
-  border-radius: 8px;
-  background-color: #CC428A;
-
-  &:hover {
-    background-color: $coins-pink;
-  }
-}
-
-// Chart CSS on portfolio
-.chartCard {
-  background: (255, 26, 104, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 25px;
-}
-
-.chartBox {
-  width: 100%;
-  height: 70vh;
-  border-radius: 20px;
-  border: solid 3px rgba(199, 74, 227, 1);
-  background: white ;
-  }
 
 .banner-profil {
   margin-top: 105px;
@@ -172,23 +98,6 @@
   background-color: #151515;
 }
 
-.list-info {
-  width: 150px;
-  text-align: end;
-}
-
-.list-info-title {
-  width: 150px;
-  text-align: start;
-}
-
-
-.display-title-x-button {
-  display: flex;
-  justify-content: space-between;
-}
-
-
 .title-view {
   padding-top: 15px;
   color: rgb(199, 74, 227);
@@ -199,16 +108,110 @@
   color: white;
 }
 
-  .width-wallet {
-    width: 100%;
-  }
 
-  .chart-view {
-    width: 100%;
-    margin-left: 30px;
-  }
+// Form around view and adresse //
 
-  #viewCanvas {
-    width: 100%;
-    min-height: 450px;
+.width-wallet {
+  width: 100%;
+}
+.wallet-button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 9px;
+  transition: 0.3s;
+  height: 32px;
+  width: 50px;
+  border-radius: 8px;
+  background-color: #CC428A;
+
+  &:hover {
+    background-color: $coins-pink;
   }
+}
+
+// Addresses CSS on portfolio //
+
+.profile-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding-bottom: 30px;
+  background: black;
+}
+.container-portfolio-profile {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2D2D2D;
+  border-radius: 20px;
+  box-shadow: black 0px 20px 30px -10px;
+  width: 100%;
+  height: 59px;
+  padding: 10px;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: $coins-pink;
+  }
+}
+.list-info-title {
+  display: flex;
+  text-align: start;
+  align-items: center;
+}
+.img-portfolio {
+  width: 40px;
+  height: 40px;
+}
+.text-card-wallet {
+  color: white;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+#num {
+  color: white;
+  font-size: 12px;
+  margin-bottom: 0;
+  margin-right: 8px;
+}
+.list-info {
+  display: flex;
+  text-align: end;
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+// Chart CSS on portfolio //
+
+.chart-view {
+  width: 100%;
+  margin-left: 30px;
+}
+
+.display-title-x-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chartCard {
+  background: (255, 26, 104, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.chartBox {
+  width: 100%;
+  height: 70vh;
+  border-radius: 20px;
+  border: solid 3px rgba(199, 74, 227, 1);
+  background: white ;
+}
+
+#viewCanvas {
+  width: 100%;
+  min-height: 450px;
+}
+
+//////
