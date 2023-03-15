@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get 'chart', to: 'pages#chart'
   get "component", to: "pages#component"
-  resources :portfolios, only: %i[index show create update] do
+  resources :portfolios, only: %i[index show create update destroy] do
     resources :transactions, only: :index
   end
   get "/component", to: "pages#component"

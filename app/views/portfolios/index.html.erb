@@ -23,10 +23,8 @@
 
       <div class="width-wallet">
           <div class="display-title-x-button">
-            <h1 class='text-pink font-rainbows'> Portfolios</h1>
-            <div class="wallet-button">
-               <a href="#" class="plus-link"><span>+</span></a>
-            </div>
+            <h2 class='text-white font-rainbows'> Portfolios</h2>
+            <a href="#" class="btn-pink" data-bs-toggle="modal" data-bs-target="#portfolioModal">+</a>
           </div>
           <div class="profile-content bg-dark-grey">
             <div class="Portfolios">
@@ -44,7 +42,7 @@
                 <%= link_to(portfolio_path(portfolio), style: "text-decoration:none;") do %>
                   <div class="list-info"><h4 class="text-card-wallet">addresses</h4></div>
                 <% end %>
-                <%= link_to(portfolio_path(portfolio), style: "text-decoration:none;") do %>
+                <%= link_to portfolio_path(portfolio), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{portfolio.name}?" } do %>
                   <i class="fas fa-trash m-3 trash-icone-value"></i>
                 <% end %>
               </div>
@@ -56,7 +54,7 @@
 
         <div class="chart-view">
           <div class="display-title-x-button">
-            <h1 class='text-pink font-rainbows'>View</h1>
+            <h2 class='text-white font-rainbows'>Distribution</h2>
           </div>
           <div class="chartCard">
             <div class="chartBox">
@@ -64,12 +62,43 @@
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
-
-
-
-
   </div>
+
+<!-- Modal -->
+<div class="modal fade" id="portfolioModal" tabindex="-1" aria-labelledby="portfolioModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="portfolioModalLabel">NEW PORTFOLIO</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <%= form_with model: @new_portfolio, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
+        <div class="modal-body">
+          <template data-nested-form-target="template">
+            <%= f.fields_for :addresses, Address.new, child_index: 'NEW_RECORD' do |address_fields| %>
+              <%= render "shared/address_form", f: address_fields %>
+            <% end %>
+          </template>
+
+          <%= f.text_field :name, class: "form-control-v2", placeholder: "Untitled portfolio" %>
+
+          <h6 class="text-white mt-4">Addresses</h6>
+
+          <%= f.fields_for :addresses, Address.new do |address_fields| %>
+            <%= render "shared/address_form", f: address_fields %>
+          <% end %>
+
+          <!-- Inserted elements will be injected before that target. -->
+          <div data-nested-form-target="target"></div>
+        </div>
+
+        <div class="modal-footer">
+          <a href="#" class="btn-pink" data-action="nested-form#add">Add address</a>
+          <%= f.submit 'Save portfolio', class: "btn-pink" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

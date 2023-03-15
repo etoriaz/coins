@@ -2,19 +2,16 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
-import { Application } from '@hotwired/stimulus'
-import NestedForm from 'stimulus-rails-nested-form'
-import Chart from 'stimulus-chartjs'
+import { application } from "./application"
 
-const application = Application.start()
-application.register('nested-form', NestedForm)
-application.register('chart', Chart)
+import AddressesController from "./addresses_controller"
+application.register("addresses", AddressesController)
 
-// import AddressesController from "./addresses_controller"
-// application.register("addresses", AddressesController)
+import BalanceController from "./balance_controller"
+application.register("balance", BalanceController)
 
-// import BalanceController from "./balance_controller"
-// application.register("balance", BalanceController)
+import EditPortfolioNameController from "./edit_portfolio_name_controller"
+application.register("edit-portfolio-name", EditPortfolioNameController)
 
-// import PortfoliosController from "./portfolios_controller"
-// application.register("portfolios", PortfoliosController)
+import PortfoliosController from "./portfolios_controller"
+application.register("portfolios", PortfoliosController)
