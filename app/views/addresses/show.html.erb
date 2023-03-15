@@ -1,8 +1,8 @@
 <div data-controller="addresses" data-addresses-address-value="<%= @address.public_key %>">
-  <div class="banner" style="background-image: url(<%= image_path('background-color.jpg') %>); padding-inline: 2.5vw; height: 63vh; padding-top: 115px;">
+  <div class="banner" style="background-image: url(<%= image_path('background-color.jpg') %>); padding-inline: 2.5vw; padding-bottom: 2%; min-height: 55vh; padding-top: 115px;">
     <div class="d-flex justify-content-around">
-      <div class="overview-address d-flex flex-column justify-content-around">
-        <div class="container px-4">
+      <div class="overview-address d-flex flex-column justify-content-around position-relative">
+        <div class="container px-4 position-absolute" style="top: 20px; left: 0px;">
           <div class="d-flex justify-content-between align-items-center">
             <div class="crypto-icon">
               <%= image_tag "btc.png" %>
@@ -38,7 +38,10 @@
           </div>
         </div>
       </div>
-      <div class="chart-address bg-dark-grey d-flex align-items-center" style="height: 47vh; border-radius: 20px; position: relative;">
+
+
+
+      <div class="chart-address bg-dark-grey d-flex align-items-center" style="min-height: 47vh; border-radius: 20px; position: relative;">
         <div class="logo-bitcoin2 d-flex">
           <%= image_tag('btc1.png', size:"80")%>
           <h1 class="totalbtc">TOTAL</h1>
