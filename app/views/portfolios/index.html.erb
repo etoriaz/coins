@@ -31,21 +31,21 @@
           <div class="profile-content bg-dark-grey">
             <div>
               <% @user_portfolios.each do |portfolio| %>
-                <%= link_to(portfolio_path(portfolio), style: "text-decoration:none;") do %>
                 <div class="container-portfolio-profile mt-3">
-                    <div class="list-info-title">
-                      <%= image_tag("btc2.png", class: "img-portfolio")%>
-                      <h4 class="text-card-wallet"> <%= portfolio.name.upcase %></h4>
-                    </div>
-                    <div class="list-info justify-self-end">
-                      <h4 id="num">86</h4>
-                      <h4 class="text-card-wallet">addresses</h4>
-                    </div>
-                    <%= link_to portfolio_path(portfolio), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{portfolio.name}?" } do %>
-                      <i class="fas fa-trash m-3 trash-icone-value"></i>
-                    <% end %>
-                </div>
-                <% end %>
+                  <%= link_to portfolio_path(portfolio), style: "text-decoration:none;", class: "d-flex justify-content-between align-items-center flex-grow-1" do %>
+                      <div class="list-info-title">
+                        <%= image_tag("btc2.png", class: "img-portfolio")%>
+                        <h4 class="text-card-wallet"> <%= portfolio.name.upcase %></h4>
+                      </div>
+                      <div class="list-info justify-self-end">
+                        <h4 id="num">86</h4>
+                        <h4 class="text-card-wallet">addresses</h4>
+                      </div>
+                  <% end %>
+                      <%= link_to portfolio_path(portfolio), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{portfolio.name}?" } do %>
+                        <i class="fas fa-trash m-3 trash-icone-value"></i>
+                      <% end %>
+                  </div>
               <% end %>
             </div>
           </div>
