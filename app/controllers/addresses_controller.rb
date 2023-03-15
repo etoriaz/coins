@@ -12,6 +12,13 @@ class AddressesController < ApplicationController
     end
   end
 
+  def destroy
+    @address = Address.find(params[:id])
+    @address.destroy
+    redirect_to portfolio_path, status: :see_other
+  end
+
+
   private
 
   def address_params
