@@ -5,6 +5,7 @@ class PortfoliosController < ApplicationController
     # return all portfolios for the current user
     @user = current_user
     @user_portfolios = current_user.portfolios
+    @new_portfolio = Portfolio.new
   end
 
   def show
@@ -34,16 +35,21 @@ class PortfoliosController < ApplicationController
   end
 
   def update
-    if @portfolio.update(params_portfolio)
-      redirect to porfolio_path(@porfolio)
-    else
-      render :show, status: :unprocessable_entity
-    end
+    @portfolio = Portfolio.find(params[:id])
+    @portfolio.update(params_portfolio)
+  end
+
+  def destroy
+    @portfolio = Portfolio.find(params[:id])
+    @portfolio.addresses.destroy_all
+    @portfolio.destroy
+
+    redirect_to portfolios_path
   end
 
   private
 
   def params_portfolio
-    params.require(:portfolio).permit(:name, addresses_attributes: [:id, :public_key, :_destroy])
+    params.require(:portfolio).permit(:id, :name, addresses_attributes: [:id, :public_key, :_destroy])
   end
 end
