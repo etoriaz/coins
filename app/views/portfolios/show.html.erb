@@ -91,16 +91,18 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add an address</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="exampleModalLabel">ADD AN ADDRESS</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <%= simple_form_for(@address) do |f|%>
       <div class="modal-body">
-       <input class="form-control" type="text" id="name" name="name" placeholder="address..." required>
+      <%= f.hidden_field :portfolio_id, value: @portfolio.id %>
+      <%= f.input :public_key, label:"public key", label_html: { class: "text-white" }, placeholder:"bc1q5crsrfueudwyfekp..." %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-secondary">Save your address</button>
+        <%= f.submit "SAVE", class:"btn btn-secondary" %>
       </div>
+        <% end %>
     </div>
   </div>
 </div>
