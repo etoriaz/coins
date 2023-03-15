@@ -80,18 +80,19 @@ p {
 }
 
 #paragraphe-card {
+  font-size: 10px;
   margin-bottom: -5px;
   margin-top: -7px;
-  margin-left: 15px;
+  margin-left: 8px;
   padding-top: 9px
 }
 
-#value-crypto-card {
+#value-crypto-card-address {
   font-size: 15px;
   color: white;
   margin-bottom: -10px;
   margin-top: -7px;
-  margin-right: 2px;
+  margin-right: -12px;
 }
 
 .icone-value-neg {
@@ -107,4 +108,8 @@ p {
 
 .delete-button-address {
   z-index: 10;
+}
+
+.clickable {
+  cursor: pointer;
 }

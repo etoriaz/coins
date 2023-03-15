@@ -18,7 +18,12 @@
   <div class="bg-dark-grey">
     <div class="container p-5">
       <div class="row">
-      <h2><%= @portfolio.name %></h2>
+      <h2 class="d-flex" data-controller="edit-portfolio-name"
+          data-edit-portfolio-name-authenticity-token-value="<%= form_authenticity_token %>"
+          data-edit-portfolio-name-portfolio-id-value="<%= @portfolio.id %>">
+      <span data-edit-portfolio-name-target="portfolioName" data-action="focusout->edit-portfolio-name#finishEdit keydown->edit-portfolio-name#finishEdit">
+      <%= @portfolio.name %>
+      </span> <div class="link-white align-self-center px-3" data-action="click->edit-portfolio-name#edit"><i class="fa-solid fa-pencil"></i></div></h2>
 
       <div class="col-12 col-lg-6">
         <div class="d-flex justify-content-between align-items-center">
@@ -47,7 +52,7 @@
                       <p id="paragraphe-card"><%= "#{address.public_key[0..7]}...#{address.public_key[-8..-1]}"%></p>
                     </div>
                     <div>
-                      <p id="value-crypto-card"><strong data-balance-target="balance" data-address="<%= address.public_key %>"></strong></p>
+                      <p id="value-crypto-card-address"><strong data-balance-target="balance" data-address="<%= address.public_key %>"></strong></p>
                     </div>
                 </div>
 
@@ -59,8 +64,8 @@
           <% end %>
 
           <%# ADD CARD %>
-          <div class="container-address">
-            <button type="button" id="btn-plus" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><h1><strong>+</strong></h1></button>
+          <div class="container-address clickable" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" id="btn-plus" class="btn"><h1><strong>+</strong></h1></button>
           </div>
 
 
@@ -79,7 +84,7 @@
   </div>
 </div>
 
-<!-- Modal -->
+<!-- Add Address Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

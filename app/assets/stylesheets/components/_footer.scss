@@ -1,14 +1,17 @@
 .footer {
-  background: rgb(21, 21, 21);
+  background: #151515;
   display: flex;
-  justify-content: center;
-  height: 100px;
-  width:100%;
-  border: rgb(21, 21,21);
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  border: #151515;
 }
 .footer-links {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
 }
 .footer-links a {
   color: white;
@@ -21,4 +24,14 @@
     color: rgb(199, 74, 227);
     font-size: 30px;
   }
+}
+
+.sizeiconefooterV0 {
+  width: 220px;
+  align-items: center;
+}
+
+.sizeiconefooterV1 {
+  width: 220px;
+  text-align: end;
 }
