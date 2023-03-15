@@ -3,7 +3,7 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
 import NestedForm from 'stimulus-rails-nested-form'
-import { chartCreate } from "./charts/portfolio-chart";
+import { viewChartCreate } from "./charts/view-chart";
 
 
 // bitcoinPrice("12h", getDateDaysAgo(90).getTime(), Date.now())
@@ -13,4 +13,4 @@ import { chartCreate } from "./charts/portfolio-chart";
 // getHistoryForAddress("3Dh8ZebbTSNboNwdwvPA6NjUdfsamPJGXo", 90, "12h")
 //   .then((data) => { window.addressHistory = data })
 // chartCreate()
-// viewChartCreate()
+viewChartCreate()

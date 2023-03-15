@@ -5,10 +5,12 @@
   height: 69px;
   padding: 10px 7px 10px 5px;
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
-  text-decoration: none;
   transition: 1s;
+
+  a {
+    text-decoration: none;
+  }
 
   &:hover {
     background-color: $coins-pink;
@@ -78,17 +80,19 @@ p {
 }
 
 #paragraphe-card {
+  font-size: 10px;
   margin-bottom: -5px;
   margin-top: -7px;
-  margin-left: 5px;
+  margin-left: 8px;
+  padding-top: 9px
 }
 
-#value-crypto-card {
+#value-crypto-card-address {
   font-size: 15px;
   color: white;
   margin-bottom: -10px;
   margin-top: -7px;
-  margin-right: 2px;
+  margin-right: -12px;
 }
 
 .icone-value-neg {
@@ -100,4 +104,8 @@ p {
   font-size: 8px;
   color: rgb(0, 255, 177);
   margin: 5px;
+}
+
+.delete-button-address {
+  z-index: 10;
 }

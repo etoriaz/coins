@@ -36,32 +36,47 @@
         <%# LIST DES ADDRESSES %>
         <div data-controller="balance" class="addresses-grid">
           <% @portfolio.addresses.each do |address| %>
-            <a class="container-address" href="<%= address_path(address) %>">
-            <div class="icone-title">
-                <div class="d-flex">
-                  <%= image_tag("logocard.png", class: "img-bitcoin") %>
-                  <div>
-                    <h2 id="title-btc"><strong>BITCOIN</strong></h2>
-                  </div>
-                </div>
-                  <i class="fas fa-trash trash-icone-value"></i>
-            </div>
+            <div class="container-address">
+              <%= link_to address_path(address), class: "w-100" do %>
+                <div class="icone-title">
+                    <div class="d-flex">
+                      <%= image_tag("logocard.png", class: "img-bitcoin") %>
+                      <div>
+                        <h2 id="title-btc"><strong>BITCOIN</strong></h2>
 
-            <div class="key-balance">
-                <div>
-                  <p id="paragraphe-card"><%= "#{address.public_key[0..7]}...#{address.public_key[-8..-1]}"%></p>
+                        <%# A CHECKER %>
+                        <div class="d-flex element-value">
+                        <% if ##### %>
+                          <i class="fa-solid fa-play icone-value-plus" style="transform: rotate(-90deg);"></i>
+                          <h4 class="value-variante">+ 5,25</h4>
+                        <% else %>
+                          <i class="fa-solid fa-play icone-value-neg" style="transform: rotate(90deg);"></i>
+                          <h4 class="value-variante">+ 5,25</h4>
+                        <% end %>
+                        </div>
+                      </div>
+                    </div>
                 </div>
-                <div>
-                  <p id="value-crypto-card"><strong data-balance-target="balance" data-address="<%= address.public_key %>"></strong></p>
-                </div>
-            </div>
 
-            </a>
+                <div class="key-balance">
+                    <div>
+                      <p id="paragraphe-card"><%= "#{address.public_key[0..7]}...#{address.public_key[-8..-1]}"%></p>
+                    </div>
+                    <div>
+                      <p id="value-crypto-card-address"><strong data-balance-target="balance" data-address="<%= address.public_key %>"></strong></p>
+                    </div>
+                </div>
+
+              <% end %>
+              <%= link_to address_path(address), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class: 'text-danger' do %>
+                <i class="fas fa-trash trash-icone-value"></i>
+              <% end %>
+            </div>
           <% end %>
 
           <%# ADD CARD %>
           <div class="container-address">
-            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><h1><strong>+</strong></h1></button>
+            <button type="button" id="btn-plus" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><h1><strong>+</strong></h1></button>
           </div>
 
 
