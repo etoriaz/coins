@@ -2,7 +2,12 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
+import NestedForm from 'stimulus-rails-nested-form'
+import Chart from 'stimulus-chartjs'
 import { application } from "./application"
+
+application.register('nested-form', NestedForm)
+application.register('chart', Chart)
 
 import AddressesController from "./addresses_controller"
 application.register("addresses", AddressesController)
