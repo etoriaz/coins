@@ -22,5 +22,5 @@ application.register("edit-portfolio-name", EditPortfolioNameController)
 import PortfoliosController from "./portfolios_controller"
 application.register("portfolios", PortfoliosController)
 
-// import PortfoliosDistributionController from "./portfolios_distribution_controller"
-// application.register("portfolios-distribution", PortfoliosDistributionController)
+import PortfoliosDistributionController from "./portfolios_distribution_controller"
+application.register("portfolios-distribution", PortfoliosDistributionController)
