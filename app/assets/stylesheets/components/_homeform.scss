@@ -96,7 +96,7 @@
   }
 
   .btn-home-fome {
-    background-color: #2D2D2D;
+    background-color: $coins-grey;
     border: 1.5px solid transparent;
     border-radius: 10px;
     width: 50px;
@@ -113,7 +113,7 @@
   }
 
   .btn-go-form {
-    background-color: #2D2D2D;
+    background-color: $coins-grey;
     border: 1.5px solid transparent;
     border-radius: 10px;
     transition: 0.5s;

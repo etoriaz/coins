@@ -10,17 +10,17 @@ import { application } from "./application"
 application.register('nested-form', NestedForm)
 application.register('chart', Chart)
 
-import AddressesController from "./addresses_controller"
-application.register("addresses", AddressesController)
+// import AddressesController from "./addresses_controller"
+// application.register("addresses", AddressesController)
 
-import BalanceController from "./balance_controller"
-application.register("balance", BalanceController)
+// import BalanceController from "./balance_controller"
+// application.register("balance", BalanceController)
 
-import EditPortfolioNameController from "./edit_portfolio_name_controller"
-application.register("edit-portfolio-name", EditPortfolioNameController)
+// import EditPortfolioNameController from "./edit_portfolio_name_controller"
+// application.register("edit-portfolio-name", EditPortfolioNameController)
 
-import PortfoliosController from "./portfolios_controller"
-application.register("portfolios", PortfoliosController)
+// import PortfoliosController from "./portfolios_controller"
+// application.register("portfolios", PortfoliosController)
 
-import PortfoliosDistributionController from "./portfolios_distribution_controller"
-application.register("portfolios-distribution", PortfoliosDistributionController)
+// import PortfoliosDistributionController from "./portfolios_distribution_controller"
+// application.register("portfolios-distribution", PortfoliosDistributionController)
