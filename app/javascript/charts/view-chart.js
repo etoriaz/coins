@@ -7,9 +7,11 @@ const viewChartCreate = (portfolios, addressesNum) => {
     const data =  {
       labels: portfolios,
       datasets: [{
-        label: 'Number of addresses',
+        label: 'Portfolio distribution',
         data: addressesNum,
-        backgroundColor: []
+        backgroundColor: [],
+        borderColor: '#2D2D2D',
+
       }]
     };
 
@@ -26,12 +28,27 @@ const viewChartCreate = (portfolios, addressesNum) => {
       type: 'pie',
       data: data,
       options: {
+        responsive: true,
         plugins: {
           legend: {
             display: false,
+          },
+          tooltip: {
+            callbacks: {
+              label: (context) => {
+              let sum = 0;
+              let dataArr = context.chart.data.datasets[0].data;
+              dataArr.forEach(data => {
+                sum += data;
+              });
+              let value = context.parsed;
+              let percentage = ((value*100) / sum).toFixed(2) + "%";
+              return `Portfolio distribution: ${percentage}`;
+              }
+            }
           }
         }
-      }
+      },
     });
   }
 };

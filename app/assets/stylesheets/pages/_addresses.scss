@@ -18,6 +18,9 @@
   border-radius: 20px;
   width: 250px;
   min-height: 47vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   .name {
     font-size: 24px;
