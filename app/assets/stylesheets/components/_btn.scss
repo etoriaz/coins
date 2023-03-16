@@ -12,6 +12,42 @@
   }
 }
 
+.btn-navbar {
+  color: white;
+  font-size: 20px;
+  height: 74px;
+  width: 110px;
+  transition: 0.3s;
+  padding: 10%;
+  display: grid;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+  }
+}
+
+.btn-navbar2 {
+  color: white;
+  font-size: 20px;
+  height: 74px;
+  width: 124px;
+  transition: 0.3s;
+  padding: 10%;
+  display: grid;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+  }
+}
+
 .start-btn {
   width: 120px;
   display: flow-root;

@@ -31,13 +31,21 @@
 .navbar-items {
   padding-top: var(--bs-navbar-brand-padding-y);
   padding-bottom: var(--bs-navbar-brand-padding-y);
-  margin-right: 15px;
   text-decoration: none;
   align-items: center;
+  text-align: center;
 }
 
 .profile-image-navbar {
   border-radius: 100%;
   object-fit: cover;
   margin-left: 15px;
+  margin-right: 15px;
+}
+
+.nav-form {
+  flex-direction: row;
+  height: 74px;
+  width: 5%;
+  align-items: center;
 }

@@ -13,4 +13,4 @@ import { viewChartCreate } from "./charts/view-chart";
 // getHistoryForAddress("3Dh8ZebbTSNboNwdwvPA6NjUdfsamPJGXo", 90, "12h")
 //   .then((data) => { window.addressHistory = data })
 // chartCreate()
-viewChartCreate()
+// viewChartCreate()

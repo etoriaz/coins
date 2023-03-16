@@ -6,11 +6,12 @@
   <% if user_signed_in? %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <li class="navbar-items d-flex">
-          <a><%= link_to "LOG OUT", destroy_user_session_path, data: { "turbo-method": :delete }, class:"btn-home-white font-btn" %></a>
+          <li class="navbar-items d-flex">
+          <a><%= link_to "LOG OUT", destroy_user_session_path, data: { "turbo-method": :delete }, class:"btn-navbar2" %></a>
           <%= link_to(portfolios_path) do %>
-            <%= image_tag("homme-photo.png", size: '42x42', class: 'profile-image-navbar')%>
+            <%= image_tag("thibovf.png", size: '42x42', class: 'profile-image-navbar')%>
           <% end %>
+          </li>
       </ul>
     </div>
 
@@ -18,10 +19,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="navbar-items">
-            <a><%= link_to "SIGN UP", new_user_registration_path, class:"btn-home-white font-btn"%></a>
+            <a><%= link_to "SIGN UP", new_user_registration_path, class:"btn-navbar"%></a>
           </li>
           <li class="navbar-items">
-            <a><%= link_to "LOG IN", user_session_path, class:"btn-home-white font-btn"%></a>
+            <a><%= link_to "LOG IN", user_session_path, class:"btn-navbar"%></a>
           </li>
       </ul>
     </div>
