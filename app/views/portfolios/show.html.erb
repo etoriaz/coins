@@ -39,7 +39,7 @@
             <div class="container-address">
               <%= link_to address_path(address), class: "w-100" do %>
                 <div class="icone-title">
-                  <div class="d-flex">
+                  <div class="d-flex" style="align-items: center;">
                     <%= image_tag("logocard.png", class: "img-bitcoin") %>
                     <div>
                       <h2 id="title-btc"><strong>BITCOIN</strong></h2>
@@ -47,7 +47,7 @@
                   </div>
                 </div>
 
-                <div class="key-balance">
+                <div class="key-balance" style=" font-size: 10px; margin-bottom: -5px; margin-top: -7px; padding-top: 9px;">
                     <div>
                       <p id="paragraphe-card"><%= "#{address.public_key[0..7]}...#{address.public_key[-8..-1]}"%></p>
                     </div>
