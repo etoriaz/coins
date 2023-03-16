@@ -39,7 +39,7 @@
                       </div>
                       <div class="list-info justify-self-end">
                         <h4 id="num"><%= portfolio.addresses.count %></h4>
-                        <h4 class="text-card-wallet"> addresses</h4>
+                        <h4 class="text-card-wallet"> <%= portfolio.addresses.count > 1 ? 'addresses' : 'address' %> </h4>
                       </div>
                   <% end %>
                       <%= link_to portfolio_path(portfolio), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{portfolio.name}?" } do %>
