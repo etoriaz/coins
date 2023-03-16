@@ -30,7 +30,7 @@
 
           <div class="profile-content bg-dark-grey">
             <div>
-              <% @user_portfolios.each do |portfolio| %>
+              <%  @user_portfolios.order(created_at: :desc).each do |portfolio| %>
                 <div class="container-portfolio-profile mt-3">
                   <%= link_to portfolio_path(portfolio), style: "text-decoration:none;", class: "d-flex justify-content-between align-items-center flex-grow-1" do %>
                       <div class="list-info-title">
