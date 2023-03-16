@@ -38,8 +38,8 @@
                         <h4 class="text-card-wallet"> <%= portfolio.name.upcase %></h4>
                       </div>
                       <div class="list-info justify-self-end">
-                        <h4 id="num">86</h4>
-                        <h4 class="text-card-wallet">addresses</h4>
+                        <h4 id="num"><%= portfolio.addresses.count %></h4>
+                        <h4 class="text-card-wallet"> addresses</h4>
                       </div>
                   <% end %>
                       <%= link_to portfolio_path(portfolio), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{portfolio.name}?" } do %>
@@ -61,7 +61,7 @@
           </div>
           <div class="chartCard">
             <div class="chartBox" data-controller="portfolios-distribution" data-portfolios-distribution-portfolios-value="<%= @user_portfolios.map { |portfolio| portfolio.name.upcase } %>" data-portfolios-distribution-addresses-value="<%= @user_portfolios.map { |portfolio| portfolio.addresses.count } %>">
-              <canvas id="viewCanvas" aria-label="distributionChart" role="img"></canvas>
+              <canvas class="mx-4" id="viewCanvas" aria-label="distributionChart" role="img"></canvas>
             </div>
           </div>
         </div>
