@@ -6,11 +6,11 @@ import NestedForm from 'stimulus-rails-nested-form'
 import { viewChartCreate } from "./charts/view-chart";
 
 
-// bitcoinPrice("12h", getDateDaysAgo(90).getTime(), Date.now())
-//   .then((data) => { window.btcPrice = data })
-// transactionsForBitcoinAddress("3Dh8ZebbTSNboNwdwvPA6NjUdfsamPJGXo", 90)
-//   .then((data) => { console.log(data) })
-// getHistoryForAddress("3Dh8ZebbTSNboNwdwvPA6NjUdfsamPJGXo", 90, "12h")
-//   .then((data) => { window.addressHistory = data })
-// chartCreate()
-// viewChartCreate()
+bitcoinPrice("12h", getDateDaysAgo(90).getTime(), Date.now())
+  .then((data) => { window.btcPrice = data })
+transactionsForBitcoinAddress("3Dh8ZebbTSNboNwdwvPA6NjUdfsamPJGXo", 90)
+  .then((data) => { console.log(data) })
+getHistoryForAddress("3Dh8ZebbTSNboNwdwvPA6NjUdfsamPJGXo", 90, "12h")
+  .then((data) => { window.addressHistory = data })
+chartCreate()
+viewChartCreate()
