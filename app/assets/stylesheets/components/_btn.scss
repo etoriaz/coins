@@ -39,7 +39,6 @@
   padding: 10%;
   display: grid;
   align-items: center;
-  color: white;
   text-decoration: none;
 
   &:hover {
@@ -49,10 +48,16 @@
 }
 
 .start-btn {
-  width: 120px;
+  width: 150px;
+  background-color: #e71f7a;
   display: flow-root;
   margin-top: 130px;
   transition: 0.3s;
+  color: #FFFFFF;
+  padding: 8px 24px;
+  border-radius: 15px;
+  border: 3px solid #FFFFFF;
+  transition: 0.5s;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.2);
