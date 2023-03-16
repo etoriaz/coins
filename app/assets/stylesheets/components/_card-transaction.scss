@@ -1,6 +1,6 @@
 // CARD TRANSACTION V1
 .container-transaction {
-  background-color: #2D2D2D;
+  background-color: $coins-grey;
   border-radius: 20px;
   box-shadow: black 0px 20px 30px -10px;
   width: 100%;
@@ -36,7 +36,7 @@
 
 // CARD TRANSACTION V1
 .container-transaction-v2 {
-  background-color: #2D2D2D;
+  background-color: $coins-grey;
   border-radius: 10px;
   box-shadow: black 0px 20px 30px -10px;
   width: 90%;
