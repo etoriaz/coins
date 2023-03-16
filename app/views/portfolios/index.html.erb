@@ -39,12 +39,14 @@
                       </div>
                       <div class="list-info justify-self-end">
                         <h4 id="num"><%= portfolio.addresses.count %></h4>
-                        <h4 class="text-card-wallet"> <%= portfolio.addresses.count > 1 ? 'addresses' : 'address' %> </h4>
                       </div>
                   <% end %>
-                      <%= link_to portfolio_path(portfolio), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{portfolio.name}?" } do %>
-                        <i class="fas fa-trash m-3 trash-icone-value"></i>
-                      <% end %>
+                  <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="text-card-wallet2" style="margin-right: 10px;"> <%= portfolio.addresses.count > 1 ? 'addresses' : 'address' %> </h4>
+                        <%= link_to portfolio_path(portfolio), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete #{portfolio.name}?" } do %>
+                          <i class="fas fa-trash m-3 trash-icone-value"></i>
+                        <% end %>
+                      </div>
                   </div>
               <% end %>
             </div>
