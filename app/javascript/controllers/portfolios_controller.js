@@ -68,10 +68,10 @@ export default class extends Controller {
       this.transactionsTarget.insertAdjacentHTML("beforeend",
         `<div class="container-transaction mt-4">` +
         `  <div class="top-transaction">` +
-        `    <p><strong class="strong-white">FROM : </strong>${transaction.inputs[0].addresses[0]}</p>` +
+        `    <p><strong class="strong-white">FROM : </strong>${transaction.inputs[0].addresses[0].slice(0, 20)}...${transaction.inputs[0].addresses[0].slice(-20)}</p>` +
         `    <!--<p class="strong-white"><strong>8h02 - 01/03/2023</strong></p>-->` +
         `  </div>` +
-        `  <p><strong class="strong-white">TO : </strong>${transaction.outputs[0].addresses[0]}</p>` +
+        `  <p><strong class="strong-white">TO : </strong>${transaction.outputs[0].addresses[0].slice(0, 20)}...${transaction.outputs[0].addresses[0].slice(-23)}</p>` +
         `  <div class="bottom-transaction">` +
         `    <p class="btc-yellow"><strong>${transaction.total / 100_000_000} BTC</strong></p>` +
         `    <a href="https://www.blockchain.com/explorer/transactions/btc/${transaction.hash}" target = "_blank" class= "link-white" > <i class="fa-solid fa-arrow-up-right-from-square"></i></a>` +
@@ -80,6 +80,7 @@ export default class extends Controller {
       )
     })
   }
+
 
   insertChart() {
     chartCreate(window.portfolioData.history.timestamps, window.portfolioData.history.values)
