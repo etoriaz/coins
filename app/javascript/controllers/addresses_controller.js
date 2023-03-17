@@ -56,7 +56,6 @@ export default class extends Controller {
 
         window.portfolioData.history.timestamps.reverse()
         window.portfolioData.history.values.reverse()
-        console.log('bon')
         this.insertChart()
         this.insertAddressInfo()
       })

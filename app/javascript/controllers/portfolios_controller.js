@@ -6,7 +6,7 @@ import { chartCreate } from "../charts/portfolio-chart"
 // Connects to data-controller="portfolios"
 export default class extends Controller {
   static values = { address: String }
-  static targets = ["transactions"]
+  static targets = ["transactions", "value"]
 
   getDateDaysAgo(days) {
     let date = new Date
@@ -60,6 +60,10 @@ export default class extends Controller {
         window.portfolioData.history.timestamps.reverse()
         window.portfolioData.history.values.reverse()
         this.insertChart()
+        this.valueTarget.innerHTML = new Intl.NumberFormat(
+          'en-US',
+          { style: "currency", currency: "USD", maximumFractionDigits: 0 }
+        ).format(window.portfolioData.history.values[window.portfolioData.history.values.length - 1])
       })
   }
 
